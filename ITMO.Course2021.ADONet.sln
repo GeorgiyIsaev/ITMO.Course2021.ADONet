@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01.Ex01.Connect", "Lab01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01.Ex02.DbConnection", "Lab01.Ex02.DbConnection\Lab01.Ex02.DbConnection.csproj", "{D9DFA19A-7FB7-42A1-8FED-5D4576063B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1Lab01.Ex03.ErrorException", "WpfApp1Lab01.Ex03.ErrorException\WpfApp1Lab01.Ex03.ErrorException.csproj", "{E61378D1-AE66-46C4-8D46-0498A6452F04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01.Ex03.ErrorException", "Lab01.Ex03.ErrorException\Lab01.Ex03.ErrorException.csproj", "{E61378D1-AE66-46C4-8D46-0498A6452F04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
