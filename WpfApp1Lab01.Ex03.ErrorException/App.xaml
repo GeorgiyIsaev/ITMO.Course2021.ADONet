@@ -1,0 +1,9 @@
+﻿<Application x:Class="WpfApp1Lab01.Ex03.ErrorException.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1Lab01.Ex03.ErrorException"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
