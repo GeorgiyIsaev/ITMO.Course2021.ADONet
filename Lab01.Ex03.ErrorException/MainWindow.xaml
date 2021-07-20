@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab01.Ex03.ErrorException"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>        
+        Title="MainWindow" Height="284.483" Width="407.663">
+    <Grid>
+        <Menu Height="36" VerticalAlignment="Top" Margin="0,0,10,0">
+            <MenuItem Header="File">
+                <MenuItem Header="Открыть соединить" Click="MenuItemConnect_Click" ></MenuItem>
+                <MenuItem Header="Отключить соединение" Click="MenuItemDisConnect_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
