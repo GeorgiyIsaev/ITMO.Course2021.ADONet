@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab02.Ex01.CommandsDB
-{
+namespace Lab02.Ex01.CommandsDB 
+{ 
     static class Program
     {
         /// <summary>
