@@ -1,4 +1,4 @@
-﻿namespace Lab01.Ex05.TOWF.ConfigurationManager
+﻿namespace Lab01.Ex05.TOWF.ConfManager
 {
     partial class Form1
     {
