@@ -16,5 +16,24 @@ namespace Lab01.Ex05.TOWF.ConfigurationManager
         {
             InitializeComponent();
         }
+
+
+
+        private void MenuItemConnect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuItemDisConnect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuItemListConnect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
