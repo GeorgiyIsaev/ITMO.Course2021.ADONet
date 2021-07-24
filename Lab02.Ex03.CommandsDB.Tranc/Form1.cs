@@ -130,5 +130,41 @@ namespace Lab02.Ex01.CommandsDB
                 listView1.Items.Add(reader["ProductName"].ToString());
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OleDbConnection connection = new OleDbConnection(testConnect);
+            connection.Open();
+            OleDbTransaction OleTran = connection.BeginTransaction();
+            OleDbCommand command = connection.CreateCommand();
+            command.Transaction = OleTran;
+
+            try
+            {
+                command.CommandText =
+              "INSERT INTO Products (ProductName) VALUES('Wrong size')";
+                command.ExecuteNonQuery();
+                command.CommandText =
+               "INSERT INTO Products (ProductName) VALUES('Wrong color')";
+                command.ExecuteNonQuery();
+
+                OleTran.Commit();
+                MessageBox.Show("Both records were written to database");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                try
+                {
+                    OleTran.Rollback();
+                }
+                catch (Exception exRollback)
+                {
+                    MessageBox.Show(exRollback.Message);
+                }
+
+            }
+            connection.Close();
+        }
     }
 }
