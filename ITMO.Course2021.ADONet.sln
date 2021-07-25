@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02.Ex02.CommandsDB.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02.Ex03.CommandsDB.Tranc", "Lab02.Ex03.CommandsDB.Tranc\Lab02.Ex03.CommandsDB.Tranc.csproj", "{A17EB338-E09F-48A7-A8AA-80A094C7AC39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab03.Ex01.DSConnect", "Lab03.Ex01.DSConnect\Lab03.Ex01.DSConnect.csproj", "{7523D5A6-F668-401C-A33E-B769CDF89341}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{A17EB338-E09F-48A7-A8AA-80A094C7AC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A17EB338-E09F-48A7-A8AA-80A094C7AC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A17EB338-E09F-48A7-A8AA-80A094C7AC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7523D5A6-F668-401C-A33E-B769CDF89341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7523D5A6-F668-401C-A33E-B769CDF89341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7523D5A6-F668-401C-A33E-B769CDF89341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7523D5A6-F668-401C-A33E-B769CDF89341}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
