@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E688F5F3-9814-49CD-95FC-A1F52F56B9BB}</ProjectGuid>
+    <ProjectGuid>{3B9A84C6-71B1-4A34-AA2C-3A2735948456}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DBCommand</RootNamespace>
     <AssemblyName>DBCommand</AssemblyName>
