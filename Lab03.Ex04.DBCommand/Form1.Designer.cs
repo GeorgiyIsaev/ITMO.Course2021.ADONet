@@ -39,6 +39,8 @@
             this.CityTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.sqlCommand4 = new System.Data.SqlClient.SqlCommand();
+            this.button5 = new System.Windows.Forms.Button();
+            this.sqlCommand5 = new System.Data.SqlClient.SqlCommand();
             this.SuspendLayout();
             // 
             // sqlConnection1
@@ -82,8 +84,11 @@
             // 
             // sqlCommand2
             // 
-            this.sqlCommand2.CommandText = "EXEC ex_Nort";
+            this.sqlCommand2.CommandText = "ex_Nort";
+            this.sqlCommand2.CommandType = System.Data.CommandType.StoredProcedure;
             this.sqlCommand2.Connection = this.sqlConnection1;
+            this.sqlCommand2.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@RETURN_VALUE", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.ReturnValue, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
             // 
             // button3
             // 
@@ -124,11 +129,31 @@
             this.sqlCommand4.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
             new System.Data.SqlClient.SqlParameter("@City", System.Data.SqlDbType.NChar, 10, "City")});
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 322);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Процедура с параметром";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // sqlCommand5
+            // 
+            this.sqlCommand5.CommandText = "ex_NameSelect";
+            this.sqlCommand5.CommandType = System.Data.CommandType.StoredProcedure;
+            this.sqlCommand5.Connection = this.sqlConnection1;
+            this.sqlCommand5.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@RETURN_VALUE", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.ReturnValue, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
+            new System.Data.SqlClient.SqlParameter("@City", System.Data.SqlDbType.NChar, 20)});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.CityTextBox);
             this.Controls.Add(this.button3);
@@ -155,6 +180,8 @@
         private System.Windows.Forms.TextBox CityTextBox;
         private System.Windows.Forms.Button button4;
         private System.Data.SqlClient.SqlCommand sqlCommand4;
+        private System.Windows.Forms.Button button5;
+        private System.Data.SqlClient.SqlCommand sqlCommand5;
     }
 }
 
