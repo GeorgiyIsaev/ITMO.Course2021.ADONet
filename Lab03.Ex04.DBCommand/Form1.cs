@@ -79,10 +79,40 @@ namespace DBCommand
                 sqlCommand3.Connection.Close();
                 MessageBox.Show("Таблица SalesPersons создана");
             }
+            catch
+            {
+                MessageBox.Show("ERROR: Таблица SalesPersons уже создана!");
+            }
             finally
             {
                 sqlCommand3.Connection.Close();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sqlCommand4.Parameters["@City"].Value = CityTextBox.Text;
+            System.Text.StringBuilder results = new System.Text.StringBuilder();
+            sqlCommand4.CommandType = CommandType.Text;
+            sqlCommand4.Parameters["@City"].Value = CityTextBox.Text;
+            sqlConnection1.Open();
+            SqlDataReader reader = sqlCommand4.ExecuteReader();
+            bool MoreResults = false;
+            do
+            {
+                while (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        results.Append(reader[i].ToString() + "\t");
+                    }
+                    results.Append(Environment.NewLine);
+                }
+                MoreResults = reader.NextResult();
+            } while (MoreResults);
+            reader.Close();
+            sqlCommand4.Connection.Close();
+            ResultsTextBox.Text = results.ToString();
         }
     }
 }
