@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab03.Ex04.DBCommand", "Lab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04.Ex01.DatasetDesigner", "Lab04.Ex01.DatasetDesigner\Lab04.Ex01.DatasetDesigner.csproj", "{BB549D8B-7CA9-4554-9FAC-36DC317B7AE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04.Ex02.CreatingDataTable", "Lab04.Ex02.CreatingDataTable\Lab04.Ex02.CreatingDataTable.csproj", "{9DCB56E9-AB16-4372-A7EC-D1CD6657DFAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{BB549D8B-7CA9-4554-9FAC-36DC317B7AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB549D8B-7CA9-4554-9FAC-36DC317B7AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB549D8B-7CA9-4554-9FAC-36DC317B7AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCB56E9-AB16-4372-A7EC-D1CD6657DFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCB56E9-AB16-4372-A7EC-D1CD6657DFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCB56E9-AB16-4372-A7EC-D1CD6657DFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCB56E9-AB16-4372-A7EC-D1CD6657DFAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
