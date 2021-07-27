@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab03.Ex03.DBCommand
+namespace DBCommand
 {
     public partial class Form1 : Form
     {

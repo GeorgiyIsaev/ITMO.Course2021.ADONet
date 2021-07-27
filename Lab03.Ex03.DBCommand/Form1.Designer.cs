@@ -1,4 +1,4 @@
-﻿namespace Lab03.Ex03.DBCommand
+﻿namespace DBCommand
 {
     partial class Form1
     {
@@ -28,13 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.sqlCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.SuspendLayout();
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=USER-ПК\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True" +
+    "";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            // 
+            // sqlCommand1
+            // 
+            this.sqlCommand1.Connection = this.sqlConnection1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Data.SqlClient.SqlConnection sqlConnection1;
+        private System.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }
 

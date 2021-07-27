@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab03.Ex03.DBCommand
+namespace DBCommand
 {
     static class Program
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lab03.Ex03.DBCommand.Properties
+namespace DBCommand.Properties
 {
 
 
