@@ -41,6 +41,8 @@
             this.sqlCommand4 = new System.Data.SqlClient.SqlCommand();
             this.button5 = new System.Windows.Forms.Button();
             this.sqlCommand5 = new System.Data.SqlClient.SqlCommand();
+            this.CategoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.OrdYearTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // sqlConnection1
@@ -141,18 +143,37 @@
             // 
             // sqlCommand5
             // 
-            this.sqlCommand5.CommandText = "ex_NameSelect";
+            this.sqlCommand5.CommandText = "SalesByCategory";
             this.sqlCommand5.CommandType = System.Data.CommandType.StoredProcedure;
             this.sqlCommand5.Connection = this.sqlConnection1;
             this.sqlCommand5.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
             new System.Data.SqlClient.SqlParameter("@RETURN_VALUE", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.ReturnValue, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@City", System.Data.SqlDbType.NChar, 20)});
+            new System.Data.SqlClient.SqlParameter("@CategoryName", System.Data.SqlDbType.NChar, 20),
+            new System.Data.SqlClient.SqlParameter("@OrdYear", System.Data.SqlDbType.NChar, 20)});
+            // 
+            // CategoryNameTextBox
+            // 
+            this.CategoryNameTextBox.Location = new System.Drawing.Point(14, 351);
+            this.CategoryNameTextBox.Name = "CategoryNameTextBox";
+            this.CategoryNameTextBox.Size = new System.Drawing.Size(168, 20);
+            this.CategoryNameTextBox.TabIndex = 8;
+            this.CategoryNameTextBox.Text = "Beverages";
+            // 
+            // OrdYearTextBox
+            // 
+            this.OrdYearTextBox.Location = new System.Drawing.Point(12, 377);
+            this.OrdYearTextBox.Name = "OrdYearTextBox";
+            this.OrdYearTextBox.Size = new System.Drawing.Size(168, 20);
+            this.OrdYearTextBox.TabIndex = 9;
+            this.OrdYearTextBox.Text = "1997";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.OrdYearTextBox);
+            this.Controls.Add(this.CategoryNameTextBox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.CityTextBox);
@@ -182,6 +203,8 @@
         private System.Data.SqlClient.SqlCommand sqlCommand4;
         private System.Windows.Forms.Button button5;
         private System.Data.SqlClient.SqlCommand sqlCommand5;
+        private System.Windows.Forms.TextBox CategoryNameTextBox;
+        private System.Windows.Forms.TextBox OrdYearTextBox;
     }
 }
 

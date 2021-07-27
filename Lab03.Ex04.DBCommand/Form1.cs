@@ -116,7 +116,23 @@ namespace DBCommand
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
+        {         
+            System.Text.StringBuilder results = new System.Text.StringBuilder();
+            sqlCommand5.Parameters["@CategoryName"].Value = CategoryNameTextBox.Text;
+            sqlCommand5.Parameters["@OrdYear"].Value = OrdYearTextBox.Text;
+            sqlCommand5.Connection.Open();
+            SqlDataReader reader = sqlCommand5.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    results.Append(reader[i].ToString() + "\t");
+                }
+                results.Append(Environment.NewLine);
+            }
+            reader.Close();
+            sqlCommand5.Connection.Close();
+            ResultsTextBox.Text = results.ToString();
 
         }
     }
