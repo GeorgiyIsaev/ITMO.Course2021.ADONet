@@ -16,5 +16,13 @@ namespace Lab05.Ex03.DataBindingComplex
         {
             InitializeComponent();
         }
+
+        private void BindGridButton_Click(object sender, EventArgs e)
+        {
+            productsTableAdapter1.Fill(northwindDataSet1.Products);
+            BindingSource productsBindingSource = new BindingSource(northwindDataSet1, "Products");
+            bindingNavigator1.BindingSource = productsBindingSource;
+
+        }
     }
 }
