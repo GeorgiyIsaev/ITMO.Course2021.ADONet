@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab05.Ex01.DataGridView
+namespace Lab05.Ex01.DataSourcesWizard
 {
     static class Program
     {

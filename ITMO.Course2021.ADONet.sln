@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04.Ex05.WorkingDataTable
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04.Ex06.DataViewExample", "Lab04.Ex06.DataViewExample\Lab04.Ex06.DataViewExample.csproj", "{7576F173-34EC-43F3-89A4-E95770871C04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab05.Ex01.DataGridView", "Lab05.Ex01.DataGridView\Lab05.Ex01.DataGridView.csproj", "{905CC016-F6F5-4162-9157-2CBC4A52D633}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab05.Ex01.DataSourcesWizard", "Lab05.Ex01.DataGridView\Lab05.Ex01.DataSourcesWizard.csproj", "{905CC016-F6F5-4162-9157-2CBC4A52D633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
