@@ -30,17 +30,26 @@ namespace Lab04.Ex03.DataAdapterWizard
         private void InitializeComponent()
         {
             this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.northwindDataSet1 = new Lab04.Ex03.DataAdapterWizard.NorthwindDataSet();
+            this.UpdateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // sqlSelectCommand1
             // 
             this.sqlSelectCommand1.CommandText = "SELECT * FROM Customers";
             this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=USER-ПК\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True" +
+    "";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // sqlInsertCommand1
             // 
@@ -62,12 +71,6 @@ namespace Lab04.Ex03.DataAdapterWizard
                         new System.Data.Common.DataColumnMapping("CompanyName", "CompanyName"),
                         new System.Data.Common.DataColumnMapping("City", "City")})});
             // 
-            // sqlConnection1
-            // 
-            this.sqlConnection1.ConnectionString = "Data Source=USER-ПК\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True" +
-    "";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -78,16 +81,33 @@ namespace Lab04.Ex03.DataAdapterWizard
             this.dataGridView1.Size = new System.Drawing.Size(443, 217);
             this.dataGridView1.TabIndex = 0;
             // 
+            // northwindDataSet1
+            // 
+            this.northwindDataSet1.DataSetName = "NorthwindDataSet";
+            this.northwindDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(13, 236);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.UpdateButton.TabIndex = 1;
+            this.UpdateButton.Text = "Save Change";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 450);
+            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,6 +119,8 @@ namespace Lab04.Ex03.DataAdapterWizard
         private System.Data.SqlClient.SqlCommand sqlInsertCommand1;
         private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private NorthwindDataSet northwindDataSet1;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
 

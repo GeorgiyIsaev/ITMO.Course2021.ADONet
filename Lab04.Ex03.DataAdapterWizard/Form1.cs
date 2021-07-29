@@ -23,5 +23,11 @@ namespace Lab04.Ex03.DataAdapterWizard
             sqlDataAdapter1.Fill(northwindDataSet1.Customers);
 
         }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            sqlDataAdapter1.Update(northwindDataSet1);
+
+        }
     }
 }
