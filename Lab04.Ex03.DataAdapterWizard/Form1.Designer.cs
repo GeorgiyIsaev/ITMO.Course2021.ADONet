@@ -70,6 +70,9 @@ namespace Lab04.Ex03.DataAdapterWizard
                         new System.Data.Common.DataColumnMapping("CustomerID", "CustomerID"),
                         new System.Data.Common.DataColumnMapping("CompanyName", "CompanyName"),
                         new System.Data.Common.DataColumnMapping("City", "City")})});
+            this.sqlDataAdapter1.RowUpdated += new System.Data.SqlClient.SqlRowUpdatedEventHandler(this.sqlDataAdapter1_RowUpdated);
+            this.sqlDataAdapter1.RowUpdating += new System.Data.SqlClient.SqlRowUpdatingEventHandler(this.sqlDataAdapter1_RowUpdating);
+            this.sqlDataAdapter1.FillError += new System.Data.FillErrorEventHandler(this.sqlDataAdapter1_FillError);
             // 
             // dataGridView1
             // 
