@@ -16,5 +16,18 @@ namespace Lab06.Ex02.LoadDataSetXml
         {
             InitializeComponent();
         }
+        DataSet NorthwindDataSet = new DataSet();
+        private void LoadSchemaButton_Click(object sender, EventArgs e)
+        {
+            NorthwindDataSet.ReadXmlSchema("Northwind.xsd");
+            CustomersGrid.DataSource = NorthwindDataSet.Tables["Customerы"];
+            OrdersGrid.DataSource = NorthwindDataSet.Tables["Orders"];
+
+        }
+
+        private void LoadDataButton_Click(object sender, EventArgs e)
+        {
+            NorthwindDataSet.ReadXml("Northwind.xml");
+        }
     }
 }

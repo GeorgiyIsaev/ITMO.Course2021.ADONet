@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NorthwindDataSet xmlns="http://tempuri.org/NorthwindDataSet.xsd">
+  <Customers>
+    <CustomerID>1</CustomerID>
+    <CompanyName>ыввыва    </CompanyName>
+    <ContactName>Moscov    </ContactName>
+  </Customers>
+  <Customers>
+    <CustomerID>2</CustomerID>
+    <CompanyName>тне       </CompanyName>
+    <ContactName>SPb       </ContactName>
+  </Customers>
+  <Customers>
+    <CustomerID>3</CustomerID>
+    <CompanyName>ркер      </CompanyName>
+    <ContactName>London    </ContactName>
+  </Customers>
+  <Customers>
+    <CustomerID>4</CustomerID>
+    <CompanyName>32423     </CompanyName>
+    <ContactName>fr3       </ContactName>
+  </Customers>
+  <Customers>
+    <CustomerID>8</CustomerID>
+    <CompanyName>34534t    </CompanyName>
+    <ContactName>ge        </ContactName>
+  </Customers>
+  <Orders>
+    <Id>1</Id>
+    <NameOrder>оооо      </NameOrder>
+  </Orders>
+  <Orders>
+    <Id>2</Id>
+    <NameOrder>гггг      </NameOrder>
+  </Orders>
+  <Orders>
+    <Id>3</Id>
+    <NameOrder>шшшшш     </NameOrder>
+  </Orders>
+</NorthwindDataSet>
