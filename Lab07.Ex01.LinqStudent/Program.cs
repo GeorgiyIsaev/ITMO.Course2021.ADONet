@@ -11,7 +11,15 @@ namespace Lab07.Ex01.LinqStudent
     {
         static void Main(string[] args)
         {
-
+            IEnumerable<Student> studentQuery =
+                from student in students
+                where student.Scores[0] > 90
+                select student;
+            foreach (Student student in studentQuery)
+            {
+                Console.WriteLine("{0}, {1}", student.Last, student.First);
+            }
+            Console.ReadKey();
         }
 
         static List<Student> students = new List<Student>
