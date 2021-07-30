@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab07.Ex00.LinqStudent", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab07.Ex01.LinqStudent", "Lab07.Ex01.LinqStudent\Lab07.Ex01.LinqStudent.csproj", "{83577D75-74BC-4575-A9F5-B9F3CD40C5DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab07.Ex02.LinqStudent", "Lab07.Ex02.LinqStudent\Lab07.Ex02.LinqStudent.csproj", "{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,10 @@ Global
 		{83577D75-74BC-4575-A9F5-B9F3CD40C5DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83577D75-74BC-4575-A9F5-B9F3CD40C5DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83577D75-74BC-4575-A9F5-B9F3CD40C5DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +216,7 @@ Global
 		{342C8436-C006-475B-891B-4AFD9705702F} = {8D1F2E29-00D1-48A1-9F6C-456713D40447}
 		{2D8C73E7-DEDD-4556-A933-4853397B792C} = {55361D79-C7EE-4B09-8713-B7C369D1FD90}
 		{83577D75-74BC-4575-A9F5-B9F3CD40C5DE} = {55361D79-C7EE-4B09-8713-B7C369D1FD90}
+		{4E210CE2-AD53-47D6-A8B9-3D8DDF7E1E13} = {55361D79-C7EE-4B09-8713-B7C369D1FD90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC1D7067-27DD-410F-8EC0-CA86337660E5}
