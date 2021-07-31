@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lab09.Ex01.CustomerManager
 {
-    public partial class Form1 : Form
+    public partial class CustomerViewer : Form
     {
-        public Form1()
+        public CustomerViewer()
         {
             InitializeComponent();
+        }
+
+        private void buttonFile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

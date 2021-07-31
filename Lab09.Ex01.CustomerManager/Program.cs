@@ -16,7 +16,7 @@ namespace Lab09.Ex01.CustomerManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new CustomerViewer());
         }
     }
 }
