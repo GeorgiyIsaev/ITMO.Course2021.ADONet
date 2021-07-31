@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lab09.Ex01.CodeFirstDLL\Lab09.Ex01.CodeFirstDLL.csproj">
+      <Project>{73d802f6-4c5d-4f21-8b85-bf7d5bd70ee4}</Project>
+      <Name>Lab09.Ex01.CodeFirstDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
