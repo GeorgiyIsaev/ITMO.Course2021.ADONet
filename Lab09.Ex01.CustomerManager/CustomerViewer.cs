@@ -41,6 +41,7 @@ namespace Lab09.Ex01.CustomerManager
                 Customer customer = new Customer
                 {
                     Name = this.textBoxname.Text.ToString(),
+                    FirstName = this.textBoxfirstname.Text.ToString(),
                     Email = this.textBoxmail.Text.ToString(),
                     Age = Int32.Parse(this.textBoxage.Text.ToString()),
                     Photo = Ph
@@ -48,6 +49,7 @@ namespace Lab09.Ex01.CustomerManager
                 context.Customers.Add(customer);
                 context.SaveChanges();
                 textBoxname.Text = String.Empty;
+                textBoxfirstname.Text = String.Empty;
                 textBoxmail.Text = String.Empty;
                 textBoxage.Text = String.Empty;
             }
@@ -57,5 +59,21 @@ namespace Lab09.Ex01.CustomerManager
             }
         }
 
+        private void Output()
+        {
+            if (this.CustomerradioButton.Checked == true)
+                GridView.DataSource = context.Customers.ToList();
+            else if (this.OrderradioButton.Checked == true)
+                GridView.DataSource = context.Orders.ToList();
+        }
+
+        private void buttonOut_Click(object sender, EventArgs e)
+        {
+            var query = from b in context.Customers
+                        orderby b.FirstName
+                        select b;
+            customerList.DataSource = query.ToList();
+            Output();
+        }
     }
 }

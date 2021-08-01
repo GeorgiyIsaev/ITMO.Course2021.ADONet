@@ -33,7 +33,7 @@
             this.textBoxname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxlastname = new System.Windows.Forms.TextBox();
+            this.textBoxfirstname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -97,10 +97,10 @@
             // 
             // textBoxlastname
             // 
-            this.textBoxlastname.Location = new System.Drawing.Point(212, 43);
-            this.textBoxlastname.Name = "textBoxlastname";
-            this.textBoxlastname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxlastname.TabIndex = 4;
+            this.textBoxfirstname.Location = new System.Drawing.Point(212, 43);
+            this.textBoxfirstname.Name = "textBoxlastname";
+            this.textBoxfirstname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxfirstname.TabIndex = 4;
             // 
             // label3
             // 
@@ -171,6 +171,7 @@
             this.buttonOut.TabIndex = 13;
             this.buttonOut.Text = "Показать данные";
             this.buttonOut.UseVisualStyleBackColor = true;
+            this.buttonOut.Click += new System.EventHandler(this.buttonOut_Click);
             // 
             // buttonEdit
             // 
@@ -268,7 +269,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxlastname);
+            this.Controls.Add(this.textBoxfirstname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxname);
             this.Controls.Add(this.orderlistBox);
@@ -290,7 +291,7 @@
         private System.Windows.Forms.TextBox textBoxname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxlastname;
+        private System.Windows.Forms.TextBox textBoxfirstname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxmail;
         private System.Windows.Forms.Label label4;
