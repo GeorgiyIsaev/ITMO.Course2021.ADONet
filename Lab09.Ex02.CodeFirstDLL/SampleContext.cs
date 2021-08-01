@@ -14,5 +14,6 @@ namespace Lab09.Ex01.CodeFirstDLL
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<VipOrder> VipOrders { get; set; }
     }
 }

@@ -56,4 +56,10 @@ namespace Lab09.Ex01.CodeFirstDLL
             return s;
         }
     }
+
+    public class VipOrder : Order
+    {
+        public string status { get; set; }
+    }
+
 }
