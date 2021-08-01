@@ -57,6 +57,7 @@ namespace Lab09.Ex01.CodeFirstDLL
         }
     }
 
+    [Table("VipOrders")] //для создания отдельно таблицы для вип заказов
     public class VipOrder : Order
     {
         public string status { get; set; }
