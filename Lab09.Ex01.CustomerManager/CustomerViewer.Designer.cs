@@ -161,6 +161,7 @@
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Добавить данные";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonOut
             // 
