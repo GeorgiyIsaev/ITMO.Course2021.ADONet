@@ -15,10 +15,10 @@ namespace Lab09.Ex01.CodeFirstDLL
         public int CustomerId { get; set; }
         [Required]
         [MaxLength(30)]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
         [Required]
         [MaxLength(30)]
-        public string FirstName { get; set; }
+        public string LastName { get; set; }
         [MaxLength(100)]
         public string Email { get; set; }
         [Range(8, 100)]
@@ -28,7 +28,7 @@ namespace Lab09.Ex01.CodeFirstDLL
 
         public override string ToString()
         {
-            string s = Name + ", электронный адрес: " + Email;
+            string s = FirstName + ", электронный адрес: " + Email;
             return s;
         }
         // Ссылка на заказы

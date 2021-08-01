@@ -30,10 +30,10 @@
         {
             this.customerList = new System.Windows.Forms.ComboBox();
             this.orderlistBox = new System.Windows.Forms.ListBox();
-            this.textBoxname = new System.Windows.Forms.TextBox();
+            this.textBoxfirstname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxfirstname = new System.Windows.Forms.TextBox();
+            this.textBoxlastname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,12 +70,12 @@
             this.orderlistBox.Size = new System.Drawing.Size(120, 95);
             this.orderlistBox.TabIndex = 1;
             // 
-            // textBoxname
+            // textBoxfirstname
             // 
-            this.textBoxname.Location = new System.Drawing.Point(212, 17);
-            this.textBoxname.Name = "textBoxname";
-            this.textBoxname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxname.TabIndex = 2;
+            this.textBoxfirstname.Location = new System.Drawing.Point(212, 17);
+            this.textBoxfirstname.Name = "textBoxfirstname";
+            this.textBoxfirstname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxfirstname.TabIndex = 2;
             // 
             // label1
             // 
@@ -95,12 +95,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Фамилия";
             // 
-            // textBoxfirstname
+            // textBoxlastname
             // 
-            this.textBoxfirstname.Location = new System.Drawing.Point(212, 43);
-            this.textBoxfirstname.Name = "textBoxfirstname";
-            this.textBoxfirstname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxfirstname.TabIndex = 4;
+            this.textBoxlastname.Location = new System.Drawing.Point(212, 43);
+            this.textBoxlastname.Name = "textBoxlastname";
+            this.textBoxlastname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxlastname.TabIndex = 4;
             // 
             // label3
             // 
@@ -181,6 +181,7 @@
             this.buttonEdit.TabIndex = 14;
             this.buttonEdit.Text = "Редактировать";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
@@ -190,6 +191,7 @@
             this.buttonDel.TabIndex = 15;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // groupBox1
             // 
@@ -248,6 +250,7 @@
             this.GridView.Name = "GridView";
             this.GridView.Size = new System.Drawing.Size(685, 282);
             this.GridView.TabIndex = 21;
+            this.GridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_CellClick);
             // 
             // CustomerViewer
             // 
@@ -269,9 +272,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxfirstname);
+            this.Controls.Add(this.textBoxlastname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxname);
+            this.Controls.Add(this.textBoxfirstname);
             this.Controls.Add(this.orderlistBox);
             this.Controls.Add(this.customerList);
             this.Name = "CustomerViewer";
@@ -289,10 +292,10 @@
 
         private System.Windows.Forms.ComboBox customerList;
         private System.Windows.Forms.ListBox orderlistBox;
-        private System.Windows.Forms.TextBox textBoxname;
+        private System.Windows.Forms.TextBox textBoxfirstname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxfirstname;
+        private System.Windows.Forms.TextBox textBoxlastname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxmail;
         private System.Windows.Forms.Label label4;
