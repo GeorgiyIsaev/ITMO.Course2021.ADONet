@@ -37,11 +37,12 @@ namespace Lab09.Ex01.CustomerManager
         {
             try
             {
+                context = new SampleContext();
                 Customer customer = new Customer
                 {
-                    Name = this.textBoxname.Text,
-                    Email = this.textBoxmail.Text,
-                    Age = Int32.Parse(this.textBoxage.Text),
+                    Name = this.textBoxname.Text.ToString(),
+                    Email = this.textBoxmail.Text.ToString(),
+                    Age = Int32.Parse(this.textBoxage.Text.ToString()),
                     Photo = Ph
                 };
                 context.Customers.Add(customer);
@@ -57,5 +58,4 @@ namespace Lab09.Ex01.CustomerManager
         }
 
     }
-}
 }

@@ -204,6 +204,7 @@
             // CustomerradioButton
             // 
             this.CustomerradioButton.AutoSize = true;
+            this.CustomerradioButton.Checked = true;
             this.CustomerradioButton.Location = new System.Drawing.Point(17, 19);
             this.CustomerradioButton.Name = "CustomerradioButton";
             this.CustomerradioButton.Size = new System.Drawing.Size(74, 17);
@@ -219,7 +220,6 @@
             this.OrderradioButton.Name = "OrderradioButton";
             this.OrderradioButton.Size = new System.Drawing.Size(56, 17);
             this.OrderradioButton.TabIndex = 17;
-            this.OrderradioButton.TabStop = true;
             this.OrderradioButton.Text = "Orders";
             this.OrderradioButton.UseVisualStyleBackColor = true;
             // 
