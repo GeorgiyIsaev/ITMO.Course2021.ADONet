@@ -95,10 +95,10 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Фамилия";
             // 
-            // textBoxlastname
+            // textBoxfirstname
             // 
             this.textBoxfirstname.Location = new System.Drawing.Point(212, 43);
-            this.textBoxfirstname.Name = "textBoxlastname";
+            this.textBoxfirstname.Name = "textBoxfirstname";
             this.textBoxfirstname.Size = new System.Drawing.Size(100, 20);
             this.textBoxfirstname.TabIndex = 4;
             // 
@@ -276,6 +276,7 @@
             this.Controls.Add(this.customerList);
             this.Name = "CustomerViewer";
             this.Text = "Customer Viewer";
+            this.Load += new System.EventHandler(this.CustomerViewer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();

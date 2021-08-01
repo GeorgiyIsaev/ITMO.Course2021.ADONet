@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Lab09.Ex01.CustomerManager
         public CustomerViewer()
         {
             InitializeComponent();
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SampleContext>());
         }
         SampleContext context;
         byte[] Ph;
@@ -37,14 +39,15 @@ namespace Lab09.Ex01.CustomerManager
         {
             try
             {
-                context = new SampleContext();
+      
                 Customer customer = new Customer
                 {
                     Name = this.textBoxname.Text.ToString(),
                     FirstName = this.textBoxfirstname.Text.ToString(),
                     Email = this.textBoxmail.Text.ToString(),
                     Age = Int32.Parse(this.textBoxage.Text.ToString()),
-                    Photo = Ph
+                    Photo = Ph,
+                    Orders = orderlistBox.SelectedItems.OfType<Order>().ToList()
                 };
                 context.Customers.Add(customer);
                 context.SaveChanges();
@@ -52,6 +55,7 @@ namespace Lab09.Ex01.CustomerManager
                 textBoxfirstname.Text = String.Empty;
                 textBoxmail.Text = String.Empty;
                 textBoxage.Text = String.Empty;
+              
             }
             catch (Exception ex)
             {
@@ -74,6 +78,15 @@ namespace Lab09.Ex01.CustomerManager
                         select b;
             customerList.DataSource = query.ToList();
             Output();
+        }
+
+        private void CustomerViewer_Load(object sender, EventArgs e)
+        {
+            context = new SampleContext();
+            context.Orders.Add(new Order { ProductName = "Аудио", Quantity = 12, PurchaseDate = DateTime.Parse("12.01.2016") });
+            context.Orders.Add(new Order { ProductName = "Видео", Quantity = 22, PurchaseDate = DateTime.Parse("10.01.2016") });
+            context.SaveChanges();
+            orderlistBox.DataSource = context.Orders.ToList();
         }
     }
 }
