@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09.Ex02.CustomerManager"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09.Ex03.CourseManager", "Lab09.Ex03.CourseManager\Lab09.Ex03.CourseManager.csproj", "{1CAD8815-828C-4E8E-B6B9-67D0D7ED3604}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ADONet.Zachet", "ITMO.ADONet.Zachet\ITMO.ADONet.Zachet.csproj", "{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,10 @@ Global
 		{1CAD8815-828C-4E8E-B6B9-67D0D7ED3604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CAD8815-828C-4E8E-B6B9-67D0D7ED3604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CAD8815-828C-4E8E-B6B9-67D0D7ED3604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
