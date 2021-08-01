@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_regist = new System.Windows.Forms.Button();
+            this.button_vievPet = new System.Windows.Forms.Button();
             this.DataGridView_PetsList = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_VievOwner = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // button_regist
             // 
-            this.button1.Location = new System.Drawing.Point(409, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(379, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Регистрация питомца";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_regist.Location = new System.Drawing.Point(409, 12);
+            this.button_regist.Name = "button_regist";
+            this.button_regist.Size = new System.Drawing.Size(379, 32);
+            this.button_regist.TabIndex = 0;
+            this.button_regist.Text = "Регистрация питомца";
+            this.button_regist.UseVisualStyleBackColor = true;
+            this.button_regist.Click += new System.EventHandler(this.button_regist_Click);
             // 
-            // button2
+            // button_vievPet
             // 
-            this.button2.Location = new System.Drawing.Point(12, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(391, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Просмотр всех питомцев";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_vievPet.Location = new System.Drawing.Point(12, 12);
+            this.button_vievPet.Name = "button_vievPet";
+            this.button_vievPet.Size = new System.Drawing.Size(391, 32);
+            this.button_vievPet.TabIndex = 1;
+            this.button_vievPet.Text = "Просмотр всех питомцев";
+            this.button_vievPet.UseVisualStyleBackColor = true;
+            this.button_vievPet.Click += new System.EventHandler(this.button_vievPet_Click);
             // 
             // DataGridView_PetsList
             // 
@@ -61,24 +63,25 @@
             this.DataGridView_PetsList.Size = new System.Drawing.Size(776, 347);
             this.DataGridView_PetsList.TabIndex = 2;
             // 
-            // button3
+            // button_VievOwner
             // 
-            this.button3.Location = new System.Drawing.Point(12, 53);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(391, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Просмотр всех владельцев";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_VievOwner.Location = new System.Drawing.Point(12, 53);
+            this.button_VievOwner.Name = "button_VievOwner";
+            this.button_VievOwner.Size = new System.Drawing.Size(391, 32);
+            this.button_VievOwner.TabIndex = 3;
+            this.button_VievOwner.Text = "Просмотр всех владельцев";
+            this.button_VievOwner.UseVisualStyleBackColor = true;
+            this.button_VievOwner.Click += new System.EventHandler(this.button_VievOwner_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button_VievOwner);
             this.Controls.Add(this.DataGridView_PetsList);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_vievPet);
+            this.Controls.Add(this.button_regist);
             this.Name = "Form1";
             this.Text = "RosPetNadzor";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).EndInit();
@@ -88,10 +91,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_regist;
+        private System.Windows.Forms.Button button_vievPet;
         private System.Windows.Forms.DataGridView DataGridView_PetsList;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_VievOwner;
     }
 }
 

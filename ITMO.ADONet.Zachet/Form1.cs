@@ -16,5 +16,21 @@ namespace ITMO.ADONet.Zachet
         {
             InitializeComponent();
         }
+
+        private void button_vievPet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_VievOwner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_regist_Click(object sender, EventArgs e)
+        {
+            RegisterPet form = new RegisterPet();
+            form.Show();
+        }
     }
 }
