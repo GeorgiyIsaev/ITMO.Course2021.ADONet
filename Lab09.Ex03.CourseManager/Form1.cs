@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lab09.Ex03.CourseManager
 {
-    public partial class Form1 : Form
+    public partial class CourseViewer : Form
     {
-        public Form1()
+        public CourseViewer()
         {
             InitializeComponent();
         }
