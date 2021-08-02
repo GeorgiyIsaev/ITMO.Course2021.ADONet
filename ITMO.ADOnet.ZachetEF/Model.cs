@@ -8,7 +8,8 @@ namespace ITMO.ADOnet.ZachetEF
 {
     public class Student
     {
-        public int IdDocument { get; set; }
+        public int StudentId { get; set; }
+        public string Document { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Group { get; set; }
