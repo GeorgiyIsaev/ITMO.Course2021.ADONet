@@ -114,6 +114,7 @@
             this.dataGridView_tabl.Name = "dataGridView_tabl";
             this.dataGridView_tabl.Size = new System.Drawing.Size(568, 234);
             this.dataGridView_tabl.TabIndex = 8;
+            this.dataGridView_tabl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_tabl_CellClick);
             // 
             // buttonAdd
             // 
@@ -133,6 +134,7 @@
             this.buttonDrop.TabIndex = 10;
             this.buttonDrop.Text = "Удалить";
             this.buttonDrop.UseVisualStyleBackColor = true;
+            this.buttonDrop.Click += new System.EventHandler(this.buttonDrop_Click);
             // 
             // buttonFix
             // 
@@ -162,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_tabl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

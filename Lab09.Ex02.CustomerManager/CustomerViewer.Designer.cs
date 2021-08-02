@@ -45,12 +45,12 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ViporderradioButton = new System.Windows.Forms.RadioButton();
             this.CustomerradioButton = new System.Windows.Forms.RadioButton();
             this.OrderradioButton = new System.Windows.Forms.RadioButton();
             this.labelid = new System.Windows.Forms.Label();
             this.textBoxCustomer = new System.Windows.Forms.TextBox();
             this.GridView = new System.Windows.Forms.DataGridView();
-            this.ViporderradioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
@@ -206,6 +206,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выбор данных";
             // 
+            // ViporderradioButton
+            // 
+            this.ViporderradioButton.AutoSize = true;
+            this.ViporderradioButton.Location = new System.Drawing.Point(134, 17);
+            this.ViporderradioButton.Name = "ViporderradioButton";
+            this.ViporderradioButton.Size = new System.Drawing.Size(74, 17);
+            this.ViporderradioButton.TabIndex = 18;
+            this.ViporderradioButton.Text = "Vip Orders";
+            this.ViporderradioButton.UseVisualStyleBackColor = true;
+            // 
             // CustomerradioButton
             // 
             this.CustomerradioButton.AutoSize = true;
@@ -214,6 +224,7 @@
             this.CustomerradioButton.Name = "CustomerradioButton";
             this.CustomerradioButton.Size = new System.Drawing.Size(74, 17);
             this.CustomerradioButton.TabIndex = 16;
+            this.CustomerradioButton.TabStop = true;
             this.CustomerradioButton.Text = "Customers";
             this.CustomerradioButton.UseVisualStyleBackColor = true;
             // 
@@ -252,16 +263,6 @@
             this.GridView.Size = new System.Drawing.Size(685, 282);
             this.GridView.TabIndex = 21;
             this.GridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_CellClick);
-            // 
-            // ViporderradioButton
-            // 
-            this.ViporderradioButton.AutoSize = true;
-            this.ViporderradioButton.Location = new System.Drawing.Point(134, 17);
-            this.ViporderradioButton.Name = "ViporderradioButton";
-            this.ViporderradioButton.Size = new System.Drawing.Size(74, 17);
-            this.ViporderradioButton.TabIndex = 18;
-            this.ViporderradioButton.Text = "Vip Orders";
-            this.ViporderradioButton.UseVisualStyleBackColor = true;
             // 
             // CustomerViewer
             // 
