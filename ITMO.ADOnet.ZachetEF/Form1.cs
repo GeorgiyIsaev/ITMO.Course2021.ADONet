@@ -21,6 +21,12 @@ namespace ITMO.ADOnet.ZachetEF
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            if (idDELL != -1)
+            {
+                ResetForm();
+                return;
+            }
+            
             try
             {            
                 Student student = new Student
@@ -34,16 +40,12 @@ namespace ITMO.ADOnet.ZachetEF
                 };
                 context.Students.Add(student);
                 context.SaveChanges();
-                textBoxName.Text = String.Empty;
-                textBoxSurName.Text = String.Empty;
-                textBoxGroup.Text = String.Empty;
-                textBoxDoc.Text = String.Empty;
+                ResetForm();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка: " + ex.ToString());
-            }
-            Output();
+            }         
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace ITMO.ADOnet.ZachetEF
         int idDELL = -1;
         private void dataGridView_tabl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            buttonAdd.Enabled = false;
+            buttonAdd.Text = "Очисть поля и создать новую запись!";
             buttonDrop.Enabled = true;
             buttonFix.Enabled = true;
 
@@ -87,16 +89,24 @@ namespace ITMO.ADOnet.ZachetEF
 
                 context.Entry(student).State = EntityState.Deleted;
                 context.SaveChanges();
-                Output();
-                idDELL = -1;
-                buttonAdd.Enabled = true;
-                buttonDrop.Enabled = false;
-                buttonFix.Enabled = false;
+                ResetForm();
             }
             else
             {
                 MessageBox.Show("Не выран объект для удаления!");
             }
+        }
+        private void ResetForm()
+        {
+            idDELL = -1;
+            buttonAdd.Text = "Добавить";
+            buttonDrop.Enabled = false;
+            buttonFix.Enabled = false;
+            textBoxName.Text = String.Empty;
+            textBoxSurName.Text = String.Empty;
+            textBoxGroup.Text = String.Empty;
+            textBoxDoc.Text = String.Empty;
+            Output();
         }
 
 
@@ -112,7 +122,8 @@ namespace ITMO.ADOnet.ZachetEF
 
             context.Entry(student).State = EntityState.Modified;
             context.SaveChanges();
-            Output();
+
+            ResetForm();
         }
     }
 }

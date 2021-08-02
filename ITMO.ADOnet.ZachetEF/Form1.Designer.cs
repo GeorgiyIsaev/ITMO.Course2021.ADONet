@@ -112,6 +112,7 @@
             this.dataGridView_tabl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_tabl.Location = new System.Drawing.Point(13, 137);
             this.dataGridView_tabl.Name = "dataGridView_tabl";
+            this.dataGridView_tabl.ReadOnly = true;
             this.dataGridView_tabl.Size = new System.Drawing.Size(568, 234);
             this.dataGridView_tabl.TabIndex = 8;
             this.dataGridView_tabl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_tabl_CellClick);
