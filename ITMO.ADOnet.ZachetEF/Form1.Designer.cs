@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxGroup = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPropusk = new System.Windows.Forms.TextBox();
+            this.textBoxDoc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_tabl = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -91,12 +91,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Группа";
             // 
-            // textBoxPropusk
+            // textBoxDoc
             // 
-            this.textBoxPropusk.Location = new System.Drawing.Point(108, 95);
-            this.textBoxPropusk.Name = "textBoxPropusk";
-            this.textBoxPropusk.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPropusk.TabIndex = 7;
+            this.textBoxDoc.Location = new System.Drawing.Point(108, 95);
+            this.textBoxDoc.Name = "textBoxDoc";
+            this.textBoxDoc.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDoc.TabIndex = 7;
             // 
             // label4
             // 
@@ -123,6 +123,7 @@
             this.buttonAdd.TabIndex = 9;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonDrop
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.buttonDrop);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridView_tabl);
-            this.Controls.Add(this.textBoxPropusk);
+            this.Controls.Add(this.textBoxDoc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxGroup);
             this.Controls.Add(this.label3);
@@ -175,7 +176,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxGroup;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPropusk;
+        private System.Windows.Forms.TextBox textBoxDoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView_tabl;
         private System.Windows.Forms.Button buttonAdd;
