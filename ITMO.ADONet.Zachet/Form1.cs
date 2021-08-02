@@ -19,7 +19,10 @@ namespace ITMO.ADONet.Zachet
 
         private void button_vievPet_Click(object sender, EventArgs e)
         {
+            //DataGridView_PetsList.DataSource = DataSet1.Owner;
 
+
+            //DataGridView_PetsList.add
         }
 
         private void button_VievOwner_Click(object sender, EventArgs e)
