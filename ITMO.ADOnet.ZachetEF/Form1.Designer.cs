@@ -144,6 +144,7 @@
             this.buttonFix.TabIndex = 11;
             this.buttonFix.Text = "Изменить";
             this.buttonFix.UseVisualStyleBackColor = true;
+            this.buttonFix.Click += new System.EventHandler(this.buttonFix_Click);
             // 
             // Form1
             // 

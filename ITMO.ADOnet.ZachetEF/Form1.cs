@@ -83,9 +83,9 @@ namespace ITMO.ADOnet.ZachetEF
         { 
             if (idDELL >=0)
             {
-                var customer = context.Students.Find(idDELL);
+                var student = context.Students.Find(idDELL);
 
-                context.Entry(customer).State = EntityState.Deleted;
+                context.Entry(student).State = EntityState.Deleted;
                 context.SaveChanges();
                 Output();
                 idDELL = -1;
@@ -97,6 +97,22 @@ namespace ITMO.ADOnet.ZachetEF
             {
                 MessageBox.Show("Не выран объект для удаления!");
             }
+        }
+
+
+        private void buttonFix_Click(object sender, EventArgs e)
+        {
+            var student = context.Students.Find(idDELL);
+            if (student == null) return;
+
+            student.Name = this.textBoxName.Text;
+            student.Surname = this.textBoxSurName.Text;
+            student.Group = this.textBoxGroup.Text;
+            student.Document = this.textBoxDoc.Text;
+
+            context.Entry(student).State = EntityState.Modified;
+            context.SaveChanges();
+            Output();
         }
     }
 }
