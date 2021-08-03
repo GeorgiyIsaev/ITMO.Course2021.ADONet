@@ -69,6 +69,12 @@
     <Compile Include="OwnerRegistrForm.Designer.cs">
       <DependentUpon>OwnerRegistrForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PetTypeRegistrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetTypeRegistrForm.Designer.cs">
+      <DependentUpon>PetTypeRegistrForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterPet.cs">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OwnerRegistrForm.resx">
       <DependentUpon>OwnerRegistrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetTypeRegistrForm.resx">
+      <DependentUpon>PetTypeRegistrForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
