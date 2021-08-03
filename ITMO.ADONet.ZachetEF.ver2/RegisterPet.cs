@@ -114,7 +114,7 @@ namespace ITMO.ADONet.Zachet
             if (textBox_Telefon.Text == "") { return false; }
 
             if (textBox_NamePet.Text == "") { return false; }          
-            if (comboBox_TypePet.SelectedItem != null) 
+            if (comboBox_TypePet.SelectedItem == null) 
             { return false; }    
 
             return true;

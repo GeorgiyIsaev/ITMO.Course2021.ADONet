@@ -35,18 +35,18 @@ namespace ITMO.ADONet.Zachet
                    ID = p.PetTypeId,                  
                    Owner = ow.Name + " " + ow.Surname,
                    PetName = p.Name,
-                   TypePet = pt.TypeAnimal + " Порода" + pt.Breed,
+                   TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
                    p.DataRegistr    
                };
-            DataGridView_PetsList.DataSource = query;
+            DataGridView_PetsList.DataSource = query.ToList();
 
             //DataGridView_PetsList.DataSource = SP.context.Pets.ToList();
         }
 
         private void button_VievOwner_Click(object sender, EventArgs e)
-        {   
+        {
             var query =
-                from o in SP.context.Owners               
+                from o in SP.context.Owners
                 select new
                 {
                     ID = o.OwnerId,
@@ -54,13 +54,13 @@ namespace ITMO.ADONet.Zachet
                     o.Surname,
                     o.DocumentNumber,
                     o.Email,
-                    o.Telefon, 
+                    o.Telefon,
                     countPets = (from p in SP.context.Pets
-                            where p.OwnerId == o.OwnerId
-                            select p).Count()
+                                 where p.OwnerId == o.OwnerId
+                                 select p).Count()
 
                 };
-            DataGridView_PetsList.DataSource = query;
+            DataGridView_PetsList.DataSource = query.ToList();
            // DataGridView_PetsList.DataSource = SP.context.Owners.ToList();
         }
 
