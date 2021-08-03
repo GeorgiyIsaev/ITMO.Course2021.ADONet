@@ -32,6 +32,7 @@
             this.button_vievPet = new System.Windows.Forms.Button();
             this.DataGridView_PetsList = new System.Windows.Forms.DataGridView();
             this.button_VievOwner = new System.Windows.Forms.Button();
+            this.comboBox_InTabl = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +74,21 @@
             this.button_VievOwner.UseVisualStyleBackColor = true;
             this.button_VievOwner.Click += new System.EventHandler(this.button_VievOwner_Click);
             // 
+            // comboBox_InTabl
+            // 
+            this.comboBox_InTabl.FormattingEnabled = true;
+            this.comboBox_InTabl.Location = new System.Drawing.Point(409, 53);
+            this.comboBox_InTabl.Name = "comboBox_InTabl";
+            this.comboBox_InTabl.Size = new System.Drawing.Size(241, 21);
+            this.comboBox_InTabl.TabIndex = 4;
+            this.comboBox_InTabl.SelectedIndexChanged += new System.EventHandler(this.comboBox_InTabl_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_InTabl);
             this.Controls.Add(this.button_VievOwner);
             this.Controls.Add(this.DataGridView_PetsList);
             this.Controls.Add(this.button_vievPet);
@@ -96,7 +107,7 @@
         private System.Windows.Forms.Button button_vievPet;
         private System.Windows.Forms.DataGridView DataGridView_PetsList;
         private System.Windows.Forms.Button button_VievOwner;
-     
+        private System.Windows.Forms.ComboBox comboBox_InTabl;
     }
 }
 

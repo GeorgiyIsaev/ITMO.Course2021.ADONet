@@ -74,6 +74,22 @@ namespace ITMO.ADONet.Zachet
         private void Form1_Load(object sender, EventArgs e)
         {
             SP.context = new SampleContext();
+            comboBox_InTabl.Items.Add("Виды животных");
+            comboBox_InTabl.Items.Add("Таблица Владельцев");
+            comboBox_InTabl.Items.Add("Таблица Питомцев");
+        }
+
+        private void comboBox_InTabl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int val = -1;
+            val = comboBox_InTabl.SelectedIndex;
+            switch (val)
+            {
+                case 1: DataGridView_PetsList.DataSource = SP.context.PetTypes.ToList(); break;
+                case 2: DataGridView_PetsList.DataSource = SP.context.Owners.ToList(); break;
+                case 3: DataGridView_PetsList.DataSource = SP.context.Pets.ToList(); break;
+            }
+               
         }
     }
 }
