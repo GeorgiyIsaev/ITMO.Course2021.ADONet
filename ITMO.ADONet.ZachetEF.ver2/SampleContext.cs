@@ -16,4 +16,9 @@ namespace ITMO.ADONet.Zachet
         public DbSet<PetType> PetTypes { get; set; }
         public DbSet<Pet> Pets { get; set; }
     }
+
+    static public class SP
+    {
+        static public SampleContext context;
+    }
 }

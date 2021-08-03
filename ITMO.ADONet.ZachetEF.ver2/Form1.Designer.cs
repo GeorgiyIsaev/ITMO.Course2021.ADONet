@@ -32,9 +32,7 @@
             this.button_vievPet = new System.Windows.Forms.Button();
             this.DataGridView_PetsList = new System.Windows.Forms.DataGridView();
             this.button_VievOwner = new System.Windows.Forms.Button();
-       
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
-     
             this.SuspendLayout();
             // 
             // button_regist
@@ -74,8 +72,6 @@
             this.button_VievOwner.Text = "Просмотр всех владельцев";
             this.button_VievOwner.UseVisualStyleBackColor = true;
             this.button_VievOwner.Click += new System.EventHandler(this.button_VievOwner_Click);
-       
-    
             // 
             // Form1
             // 
@@ -88,8 +84,8 @@
             this.Controls.Add(this.button_regist);
             this.Name = "Form1";
             this.Text = "RosPetNadzor";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).EndInit();
- 
             this.ResumeLayout(false);
 
         }

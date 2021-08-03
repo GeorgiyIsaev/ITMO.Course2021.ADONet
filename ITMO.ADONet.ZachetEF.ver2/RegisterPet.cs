@@ -13,13 +13,10 @@ namespace ITMO.ADONet.Zachet
 {
     public partial class RegisterPet : Form
     {
-        OleDbConnection connection = new OleDbConnection();
-        string testConnect = @"Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RosPetNadzor;Data Source=USER-ПК\SQLEXPRESS";
-
 
         public RegisterPet()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
        
@@ -31,54 +28,49 @@ namespace ITMO.ADONet.Zachet
             textBox_Telefon.Enabled = false;
 
 
-            try
-            {
-                if (connection.State != ConnectionState.Open)
-                {
-                    connection.ConnectionString = testConnect;
-                    connection.Open();
-                }
-            }           
-            catch (Exception Xcp)
-            {
-                MessageBox.Show(Xcp.Message, "Unexpected Exception",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    if (connection.State != ConnectionState.Open)
+            //    {
+            //        connection.ConnectionString = testConnect;
+            //        connection.Open();
+            //    }
+            //}           
+            //catch (Exception Xcp)
+            //{
+            //    MessageBox.Show(Xcp.Message, "Unexpected Exception",
+            //           MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void button_check_Click(object sender, EventArgs e)
         {
-            //ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
-            if (connection.State == ConnectionState.Closed)
+            if (textBox_OwnerNumberDoc.Text == String.Empty) return;
+
+            var selectedOwner = from user in SP.context.Owners
+                                where user.DocumentNumber == textBox_OwnerNumberDoc.Text
+                                select user;
+            if(selectedOwner.Count() < 1)
             {
-                MessageBox.Show("Сначала подключитесь к базе");
-                return;
+                MessageBox.Show("Запись не найдена!");
             }
-            OleDbCommand command = new OleDbCommand();
-
-            command.Connection = connection;
-            command.CommandText = "SELECT COUNT(*) FROM Products";
-            int number = (int)command.ExecuteScalar();
-            label1.Text = number.ToString();
-
-
-
-            //string command = "select * from Owner='" + textBox_OwnerNumberDoc.Text + "'";
-
-            //MessageBox.Show(command);
-
-            if (textBox_OwnerNumberDoc.Text == "123") 
+            foreach (var val in selectedOwner)
             {
-                textBox_OwnerNumberDoc.Enabled = false;
-                textBox_OwnerName.Enabled = true;
-                textBox_OwnerSurName.Enabled = true;
-                textBox_Email.Enabled = true;
-                textBox_Telefon.Enabled = true;
+                textBox_OwnerName.Text = val.Name;
+                textBox_OwnerSurName.Text = val.Surname; 
+                textBox_Email.Text = val.Email;
+                textBox_Telefon.Text = val.Telefon;
             }
 
 
-
-
+            //if (textBox_OwnerNumberDoc.Text == "123") 
+            //{
+            //    textBox_OwnerNumberDoc.Enabled = false;
+            //    textBox_OwnerName.Enabled = true;
+            //    textBox_OwnerSurName.Enabled = true;
+            //    textBox_Email.Enabled = true;
+            //    textBox_Telefon.Enabled = true;
+            //}
         }
 
         private bool CheckFullText()
