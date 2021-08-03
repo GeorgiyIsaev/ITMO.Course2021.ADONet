@@ -119,15 +119,23 @@ namespace ITMO.ADONet.Zachet
             
             int valTabl = comboBox_InTabl.SelectedIndex;
             int currentRowTabl = DataGridView_PetsList.CurrentRow.Index;
+    
             if (currentRowTabl < 0) return;
 
             switch (valTabl)
             {
                 case 0: case 3: DataGridVievFromPet(); break;
-                case 1: case 4: DataGridVievFromOwner(); break;
-                case 2:
-                    PetTypeRegistrForm ownerForm = new PetTypeRegistrForm(true, currentRowTabl+1);
+                case 1: case 4:
+                    String docNumber = DataGridView_PetsList.Rows[currentRowTabl].Cells[3].Value.ToString();
+                    OwnerRegistrForm ownerForm = new OwnerRegistrForm(docNumber, true);
                     if (ownerForm.ShowDialog() == DialogResult.OK)
+                    {
+                     
+                    }
+                    break;
+                case 2:
+                    PetTypeRegistrForm petTypeForm = new PetTypeRegistrForm(true, currentRowTabl+1);
+                    if (petTypeForm.ShowDialog() == DialogResult.OK)
                     {
                     
                     }

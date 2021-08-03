@@ -12,10 +12,12 @@ namespace ITMO.ADONet.Zachet
 {
     public partial class OwnerRegistrForm : Form
     {
-        public OwnerRegistrForm(string DocumentNumber)
+        bool ifCange;
+        public OwnerRegistrForm(string DocumentNumber, bool ifCange = false)
         {
             InitializeComponent();
             textBox_OwnerNumberDoc.Text = DocumentNumber;
+            this.ifCange = ifCange;
         }
 
         private void OwnerRegistrForm_Load(object sender, EventArgs e)
