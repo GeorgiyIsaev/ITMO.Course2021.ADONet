@@ -36,8 +36,8 @@ namespace ITMO.ADONet.Zachet
     public class Pet
     {
         public int PetId { get; set; }
-        public PetType PetTypeId { get; set; }
-        public Owner OwnerId { get; set; }
+        public int PetTypeId { get; set; }
+        public int OwnerId { get; set; }
         public string Name { get; set; }
         public string DataRegistr { get; set; } 
     }

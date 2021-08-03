@@ -13,7 +13,9 @@ namespace ITMO.ADONet.Zachet
 {
     public partial class RegisterPet : Form
     {
-
+        int idOwner = -1;
+        int idPetType = -1;
+        
         public RegisterPet()
         {
             InitializeComponent(); 
@@ -53,16 +55,15 @@ namespace ITMO.ADONet.Zachet
         }
 
 
-
-
+     
         private void button_check_Click(object sender, EventArgs e)
         {
             if (textBox_OwnerNumberDoc.Text == String.Empty) return;
-
-            var selectedOwner = from user in SP.context.Owners
+            IQueryable<Owner> selectedOwner = from user in SP.context.Owners
                                 where user.DocumentNumber == textBox_OwnerNumberDoc.Text
-                                select user;
-            if(selectedOwner.Count() < 1)
+                                select user;            
+
+            if (selectedOwner.Count() < 1)
             {
 
                 DialogResult result = MessageBox.Show("Добавить нового владельца",
@@ -92,6 +93,7 @@ namespace ITMO.ADONet.Zachet
                 textBox_OwnerSurName.Text = val.Surname; 
                 textBox_Email.Text = val.Email;
                 textBox_Telefon.Text = val.Telefon;
+                idOwner = val.OwnerId;
             }
         }
 
@@ -126,13 +128,13 @@ namespace ITMO.ADONet.Zachet
                 MessageBox.Show("Не все поля заполнены!");
             }
             try
-            {
+            {      
                 Pet pet = new Pet
                 {
                     Name = textBox_OwnerName.Text,
                     DataRegistr = "",
-                    //OwnerId = 1,
-                    //PetTypeId = 2                
+                    OwnerId =  idOwner,
+                    PetTypeId = idPetType                
                 };
                 SP.context.Pets.Add(pet);
                 SP.context.SaveChanges();
@@ -145,6 +147,7 @@ namespace ITMO.ADONet.Zachet
 
         }
 
+   
         private void comboBox_TypePet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_TypePet.SelectedIndex == 0)
@@ -152,9 +155,12 @@ namespace ITMO.ADONet.Zachet
                 PetTypeRegistrForm ownerForm = new PetTypeRegistrForm();
                 if (ownerForm.ShowDialog() == DialogResult.OK)
                 {
-                    AddComboBoxTypePet();
+                    AddComboBoxTypePet();  
                 }
-            }           
+            }
+            //var selectedPetType = from user in SP.context.PetTypes
+            //                      where user.Breed == textBox_OwnerNumberDoc.Text
+            //                      select user;
         }
     }
 }
