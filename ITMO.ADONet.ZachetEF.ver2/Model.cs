@@ -14,6 +14,11 @@ namespace ITMO.ADONet.Zachet
         public string DocumentNumber { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
+
+        public override string ToString()
+        {
+            return Name + " " + Surname;
+        }
     }
     public class PetType
     {
@@ -22,6 +27,11 @@ namespace ITMO.ADONet.Zachet
         public string Breed { get; set; }
         public string Characteristic { get; set; }
         public string DopInfo { get; set; }
+
+        public override string ToString()
+        {
+            return TypeAnimal + " Порода: " + Breed;
+        }
     }
     public class Pet
     {

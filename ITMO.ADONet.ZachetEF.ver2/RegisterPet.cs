@@ -93,16 +93,6 @@ namespace ITMO.ADONet.Zachet
                 textBox_Email.Text = val.Email;
                 textBox_Telefon.Text = val.Telefon;
             }
-
-
-            //if (textBox_OwnerNumberDoc.Text == "123") 
-            //{
-            //    textBox_OwnerNumberDoc.Enabled = false;
-            //    textBox_OwnerName.Enabled = true;
-            //    textBox_OwnerSurName.Enabled = true;
-            //    textBox_Email.Enabled = true;
-            //    textBox_Telefon.Enabled = true;
-            //}
         }
 
         private bool CheckFullText()
@@ -135,7 +125,23 @@ namespace ITMO.ADONet.Zachet
             {
                 MessageBox.Show("Не все поля заполнены!");
             }
-  
+            try
+            {
+                Pet pet = new Pet
+                {
+                    Name = textBox_OwnerName.Text,
+                    DataRegistr = "",
+                    //OwnerId = 1,
+                    //PetTypeId = 2                
+                };
+                SP.context.Pets.Add(pet);
+                SP.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.ToString());
+            }
+
 
         }
 
@@ -150,6 +156,5 @@ namespace ITMO.ADONet.Zachet
                 }
             }           
         }
-
     }
 }
