@@ -32,9 +32,9 @@
             this.button_vievPet = new System.Windows.Forms.Button();
             this.DataGridView_PetsList = new System.Windows.Forms.DataGridView();
             this.button_VievOwner = new System.Windows.Forms.Button();
-            this.dataSet11 = new ITMO.ADONet.Zachet.DataSet1();
+       
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+     
             this.SuspendLayout();
             // 
             // button_regist
@@ -74,11 +74,8 @@
             this.button_VievOwner.Text = "Просмотр всех владельцев";
             this.button_VievOwner.UseVisualStyleBackColor = true;
             this.button_VievOwner.Click += new System.EventHandler(this.button_VievOwner_Click);
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+       
+    
             // 
             // Form1
             // 
@@ -92,7 +89,7 @@
             this.Name = "Form1";
             this.Text = "RosPetNadzor";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+ 
             this.ResumeLayout(false);
 
         }
@@ -103,7 +100,7 @@
         private System.Windows.Forms.Button button_vievPet;
         private System.Windows.Forms.DataGridView DataGridView_PetsList;
         private System.Windows.Forms.Button button_VievOwner;
-        private DataSet1 dataSet11;
+     
     }
 }
 
