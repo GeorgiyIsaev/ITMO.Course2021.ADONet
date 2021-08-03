@@ -248,6 +248,7 @@
             this.comboBox_TypePet.Name = "comboBox_TypePet";
             this.comboBox_TypePet.Size = new System.Drawing.Size(176, 21);
             this.comboBox_TypePet.TabIndex = 2;
+            this.comboBox_TypePet.SelectedIndexChanged += new System.EventHandler(this.comboBox_TypePet_SelectedIndexChanged);
             // 
             // label12
             // 

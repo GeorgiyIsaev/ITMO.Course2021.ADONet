@@ -127,14 +127,22 @@ namespace ITMO.ADONet.Zachet
             {
                 MessageBox.Show("Не все поля заполнены!");
             }
+  
 
-        //    DataSet1.OwnerRow ownerRow = new DataSet1.OwnerRow()
-        //    {
-        //        Name = "",
-        //    SurName = "",
+        }
 
-        //}
-;
+        private void comboBox_TypePet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_TypePet.SelectedIndex == 0)
+            {
+                PetTypeRegistrForm ownerForm = new PetTypeRegistrForm();
+                if (ownerForm.ShowDialog() == DialogResult.OK)
+                {
+                    //var selectedOwner = from user in SP.context.Owners
+                    //                    where user.DocumentNumber == textBox_OwnerNumberDoc.Text
+                    //                    select user;
+                }
+            }           
         }
     }
 }
