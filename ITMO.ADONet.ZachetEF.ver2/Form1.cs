@@ -112,8 +112,10 @@ namespace ITMO.ADONet.Zachet
         }
 
         private void button_record_Click(object sender, EventArgs e)
-        {
-            if (DataGridView_PetsList.CurrentRow.Index == null) return;
+        {        
+            if (DataGridView_PetsList.CurrentRow == null) return;
+
+      
             
             int valTabl = comboBox_InTabl.SelectedIndex;
             int currentRowTabl = DataGridView_PetsList.CurrentRow.Index;
