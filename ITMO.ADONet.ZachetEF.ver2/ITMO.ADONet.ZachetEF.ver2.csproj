@@ -71,6 +71,7 @@
     <Compile Include="RegisterPet.Designer.cs">
       <DependentUpon>RegisterPet.cs</DependentUpon>
     </Compile>
+    <Compile Include="SampleContext.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
