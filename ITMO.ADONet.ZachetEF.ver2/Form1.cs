@@ -114,14 +114,23 @@ namespace ITMO.ADONet.Zachet
         private void button_record_Click(object sender, EventArgs e)
         {
             int valTabl = comboBox_InTabl.SelectedIndex;
+            int currentRowTabl = DataGridView_PetsList.CurrentRow.Index;
+            if (currentRowTabl < 0) return;
+
             switch (valTabl)
             {
                 case 0: case 3: DataGridVievFromPet(); break;
                 case 1: case 4: DataGridVievFromOwner(); break;
-                case 2: 
+                case 2:
+                    PetTypeRegistrForm ownerForm = new PetTypeRegistrForm(true, currentRowTabl);
+                    if (ownerForm.ShowDialog() == DialogResult.OK)
+                    {
+                    
+                    }
                     break;
               
             }
+            DataGridView_PetsList.ClearSelection();
         }
     }
 }

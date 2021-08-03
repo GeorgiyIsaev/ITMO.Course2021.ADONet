@@ -149,7 +149,7 @@ namespace ITMO.ADONet.Zachet
         {
             if (comboBox_TypePet.SelectedIndex == 0)
             {
-                PetTypeRegistrForm ownerForm = new PetTypeRegistrForm();
+                PetTypeRegistrForm ownerForm = new PetTypeRegistrForm(false, 0);
                 if (ownerForm.ShowDialog() == DialogResult.OK)
                 {
                     AddComboBoxTypePet();

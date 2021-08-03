@@ -12,9 +12,13 @@ namespace ITMO.ADONet.Zachet
 {
     public partial class PetTypeRegistrForm : Form
     {
-        public PetTypeRegistrForm()
+        bool ifchange = false;
+        int idType;
+        public PetTypeRegistrForm(bool ifchange, int idType)
         {
             InitializeComponent();
+            this.ifchange = ifchange;
+            this.idType = idType;
         }
 
         bool ifClossing = false;
@@ -51,6 +55,19 @@ namespace ITMO.ADONet.Zachet
                 e.Cancel = true;
             }
             ifClossing = false;
+        }
+
+        private void PetTypeRegistrForm_Load(object sender, EventArgs e)
+        {
+            if (ifchange)
+            {
+                var petType = SP.context.PetTypes.Find(idType);
+
+                textBox_Breed.Text = petType.Breed;
+                textBox_Char.Text = petType.Characteristic;
+                textBox_DopInfo.Text = petType.DopInfo;
+                textBox_Type.Text = petType.TypeAnimal;
+            }
         }
     }
 }
