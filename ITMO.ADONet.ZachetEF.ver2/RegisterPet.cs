@@ -159,7 +159,7 @@ namespace ITMO.ADONet.Zachet
             }
             else
             {
-                idPetType = comboBox_TypePet.SelectedIndex - 1;
+                idPetType = comboBox_TypePet.SelectedIndex;
             }
         }
     }
