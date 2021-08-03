@@ -52,11 +52,26 @@ namespace ITMO.ADONet.Zachet
                                 select user;
             if(selectedOwner.Count() < 1)
             {
-                MessageBox.Show("Запись не найдена!");
-                OwnerRegistrForm ownerForm = new OwnerRegistrForm(textBox_OwnerNumberDoc.Text);
-                ownerForm.Show();
-            }
 
+                DialogResult result = MessageBox.Show("Добавить нового владельца",
+                    "Запись не найдена!",
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                if (result == DialogResult.Yes)
+                {
+                    OwnerRegistrForm ownerForm = new OwnerRegistrForm(textBox_OwnerNumberDoc.Text);
+                    if (ownerForm.ShowDialog() == DialogResult.OK)
+                    {
+                        selectedOwner = from user in SP.context.Owners
+                                            where user.DocumentNumber == textBox_OwnerNumberDoc.Text
+                                            select user;
+                    }
+                }
+            }
 
 
             foreach (var val in selectedOwner)
