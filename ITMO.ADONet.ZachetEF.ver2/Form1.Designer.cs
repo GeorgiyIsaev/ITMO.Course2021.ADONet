@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_regist = new System.Windows.Forms.Button();
             this.button_vievPet = new System.Windows.Forms.Button();
             this.DataGridView_PetsList = new System.Windows.Forms.DataGridView();
             this.button_VievOwner = new System.Windows.Forms.Button();
             this.comboBox_InTabl = new System.Windows.Forms.ComboBox();
+            this.button_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,17 +79,28 @@
             // comboBox_InTabl
             // 
             this.comboBox_InTabl.FormattingEnabled = true;
-            this.comboBox_InTabl.Location = new System.Drawing.Point(409, 53);
+            this.comboBox_InTabl.Location = new System.Drawing.Point(479, 64);
             this.comboBox_InTabl.Name = "comboBox_InTabl";
             this.comboBox_InTabl.Size = new System.Drawing.Size(241, 21);
             this.comboBox_InTabl.TabIndex = 4;
             this.comboBox_InTabl.SelectedIndexChanged += new System.EventHandler(this.comboBox_InTabl_SelectedIndexChanged);
+            // 
+            // button_update
+            // 
+            this.button_update.Image = ((System.Drawing.Image)(resources.GetObject("button_update.Image")));
+            this.button_update.Location = new System.Drawing.Point(726, 49);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(62, 41);
+            this.button_update.TabIndex = 5;
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_update);
             this.Controls.Add(this.comboBox_InTabl);
             this.Controls.Add(this.button_VievOwner);
             this.Controls.Add(this.DataGridView_PetsList);
@@ -108,6 +121,7 @@
         private System.Windows.Forms.DataGridView DataGridView_PetsList;
         private System.Windows.Forms.Button button_VievOwner;
         private System.Windows.Forms.ComboBox comboBox_InTabl;
+        private System.Windows.Forms.Button button_update;
     }
 }
 
