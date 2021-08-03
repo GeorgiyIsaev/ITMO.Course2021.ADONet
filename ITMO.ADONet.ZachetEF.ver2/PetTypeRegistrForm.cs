@@ -86,6 +86,11 @@ namespace ITMO.ADONet.Zachet
             if (ifchange)
             {
                 var petType = SP.context.PetTypes.Find(idType);
+                if (petType == null)
+                {
+                    MessageBox.Show("Объект с индексом " + idType + " отсутствует!");
+                    return;
+                }
 
                 textBox_Breed.Text = petType.Breed;
                 textBox_Char.Text = petType.Characteristic;
