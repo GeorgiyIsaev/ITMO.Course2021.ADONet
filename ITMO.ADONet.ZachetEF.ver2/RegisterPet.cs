@@ -26,34 +26,34 @@ namespace ITMO.ADONet.Zachet
             textBox_OwnerSurName.Enabled = false;
             textBox_Email.Enabled = false;
             textBox_Telefon.Enabled = false;
+            AddComboBoxTypePet();
 
+
+        }
+
+        private void AddComboBoxTypePet()
+        {
+            comboBox_TypePet.Items.Clear();
+            comboBox_TypePet.ResetText();
             comboBox_TypePet.Items.Add("<Новый вид>");
-
-            var result = (from u in ctx.Users
-                          where u.UserId.Equals(id)
-                          select new
-                          {
-                              FullName = u.LName + ", " + u.FName
-                          }).First();
-
-
             var query =
                 from p in SP.context.PetTypes
-                group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed} into g
+                group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed } into g
                 let count = g.Count()
                 where count > 1
                 select new
                 {
-                    g.Key.FullName,            
-                    Count = count                 
+                    g.Key.FullName,
+                    Count = count
                 };
             foreach (var val in query)
             {
                 comboBox_TypePet.Items.Add(val.FullName);
             }
-
-
         }
+
+
+
 
         private void button_check_Click(object sender, EventArgs e)
         {
@@ -114,8 +114,7 @@ namespace ITMO.ADONet.Zachet
             if (textBox_Email.Text == "") { return false; }
             if (textBox_Telefon.Text == "") { return false; }
 
-            if (textBox_NamePet.Text == "") { return false; }
-          
+            if (textBox_NamePet.Text == "") { return false; }          
             if (comboBox_TypePet.SelectedItem != null)
             { return false; }    
 
@@ -147,21 +146,10 @@ namespace ITMO.ADONet.Zachet
                 PetTypeRegistrForm ownerForm = new PetTypeRegistrForm();
                 if (ownerForm.ShowDialog() == DialogResult.OK)
                 {
-                    //var selectedOwner = from user in SP.context.Owners
-                    //                    where user.DocumentNumber == textBox_OwnerNumberDoc.Text
-                    //                    select user;
+                    AddComboBoxTypePet();
                 }
             }           
         }
 
-        private void comboBox_BreedPet_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
