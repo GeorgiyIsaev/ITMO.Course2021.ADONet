@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,14 +28,21 @@ namespace ITMO.ADONet.Zachet
             ifClossing = true;
             try
             {
-                PetType petType = new PetType
+                if (ifchange)
                 {
-                    TypeAnimal = textBox_Type.Text,
-                    Breed = textBox_Breed.Text,
-                    Characteristic = textBox_Char.Text,
-                    DopInfo = textBox_DopInfo.Text                  
-                };
-                SP.context.PetTypes.Add(petType);
+                    ChangeTypePet();
+                }
+                else
+                {
+                    PetType petType = new PetType
+                    {
+                        TypeAnimal = textBox_Type.Text,
+                        Breed = textBox_Breed.Text,
+                        Characteristic = textBox_Char.Text,
+                        DopInfo = textBox_DopInfo.Text
+                    };
+                    SP.context.PetTypes.Add(petType);
+                }
                 SP.context.SaveChanges();
             }
             catch (Exception ex)
@@ -42,6 +50,22 @@ namespace ITMO.ADONet.Zachet
                 MessageBox.Show("Ошибка: " + ex.ToString());
             }
         }
+        private void ChangeTypePet()
+        {
+            var petType = SP.context.PetTypes.Find(idType);
+            if (petType == null) return;
+
+            petType.TypeAnimal = textBox_Type.Text;
+            petType.Breed = textBox_Breed.Text;
+            petType.Characteristic = textBox_Char.Text;
+            petType.DopInfo = textBox_DopInfo.Text;
+
+            SP.context.Entry(petType).State = EntityState.Modified;
+            SP.context.SaveChanges();
+        }
+
+
+
 
         private void PetTypeRegistrForm_FormClosing(object sender, FormClosingEventArgs e)
         {
