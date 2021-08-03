@@ -38,24 +38,31 @@ namespace ITMO.ADONet.Zachet
             comboBox_TypePet.Items.Clear();
             comboBox_TypePet.ResetText();
             comboBox_TypePet.Items.Add("<Новый вид>");
-            var query =
-                from p in SP.context.PetTypes
-                group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed } into g
-                let count = g.Count()
-                where count > 1
-                select new
-                {
-                    g.Key.FullName,
-                    Count = count
-                };
-            foreach (var val in query)
+            //var query =
+            //    from p in SP.context.PetTypes
+            //    group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed } into g
+            //    let count = g.Count()
+            //    where count > 1
+            //    select new
+            //    {
+            //        g.Key.FullName,
+            //        Count = count
+            //    };
+            //foreach (var val in query)
+            //{
+            //    comboBox_TypePet.Items.Add(val.FullName);
+            //}
+
+
+            var quere = from p in SP.context.PetTypes select p;
+            foreach (var val in quere)
             {
-                comboBox_TypePet.Items.Add(val.FullName);
+                comboBox_TypePet.Items.Add(val);
             }
         }
 
 
-     
+
         private void button_check_Click(object sender, EventArgs e)
         {
             if (textBox_OwnerNumberDoc.Text == String.Empty) return;
@@ -107,19 +114,11 @@ namespace ITMO.ADONet.Zachet
             if (textBox_Telefon.Text == "") { return false; }
 
             if (textBox_NamePet.Text == "") { return false; }          
-            if (comboBox_TypePet.SelectedItem != null)
+            if (comboBox_TypePet.SelectedItem != null) 
             { return false; }    
 
             return true;
-        }
-            //textBox_OwnerName
-            //textBox_OwnerSurName
-            //textBox_Email
-            //textBox_Telefon
-            //comboBox_TypePet
-            //comboBox_BreedPet
-            //textBox_NamePet
-            //dateTimePicker_registr
+        }     
 
         private void button_registr_Click(object sender, EventArgs e)
         {
@@ -132,7 +131,7 @@ namespace ITMO.ADONet.Zachet
                 Pet pet = new Pet
                 {
                     Name = textBox_OwnerName.Text,
-                    DataRegistr = "",
+                    DataRegistr = dateTimePicker_registr.Value,
                     OwnerId =  idOwner,
                     PetTypeId = idPetType                
                 };
@@ -143,8 +142,6 @@ namespace ITMO.ADONet.Zachet
             {
                 MessageBox.Show("Ошибка: " + ex.ToString());
             }
-
-
         }
 
    
@@ -155,12 +152,15 @@ namespace ITMO.ADONet.Zachet
                 PetTypeRegistrForm ownerForm = new PetTypeRegistrForm();
                 if (ownerForm.ShowDialog() == DialogResult.OK)
                 {
-                    AddComboBoxTypePet();  
+                    AddComboBoxTypePet();
+                    comboBox_TypePet.SelectedItem = -1;
+                    comboBox_TypePet.SelectedItem = null;
                 }
             }
-            //var selectedPetType = from user in SP.context.PetTypes
-            //                      where user.Breed == textBox_OwnerNumberDoc.Text
-            //                      select user;
+            else
+            {
+                idPetType = comboBox_TypePet.SelectedIndex - 1;
+            }
         }
     }
 }
