@@ -20,9 +20,7 @@ namespace ITMO.ADONet.Zachet
 
         private void OwnerRegistrForm_Load(object sender, EventArgs e)
         {
-            textBox_OwnerNumberDoc.Enabled = false;
-
-      
+            textBox_OwnerNumberDoc.Enabled = false;      
         }
 
         bool ifClossing = false;

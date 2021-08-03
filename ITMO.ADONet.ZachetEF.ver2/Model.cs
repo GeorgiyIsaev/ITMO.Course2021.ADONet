@@ -18,8 +18,8 @@ namespace ITMO.ADONet.Zachet
     public class PetType
     {
         public int PetTypeId { get; set; }
-        public string Type { get; set; }
-        public string Bbreed { get; set; }
+        public string TypeAnimal { get; set; }
+        public string Breed { get; set; }
         public string Characteristic { get; set; }
         public string DopInfo { get; set; }
     }

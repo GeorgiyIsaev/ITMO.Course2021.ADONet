@@ -133,6 +133,7 @@
             this.button_Add.TabIndex = 14;
             this.button_Add.Text = "Добавить";
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // PetTypeRegistrForm
             // 
@@ -143,6 +144,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "PetTypeRegistrForm";
             this.Text = "Регистрация вида животного";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PetTypeRegistrForm_FormClosing);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
