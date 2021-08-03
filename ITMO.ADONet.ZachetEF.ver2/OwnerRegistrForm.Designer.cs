@@ -96,6 +96,7 @@
             // 
             // button_registr
             // 
+            this.button_registr.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_registr.Location = new System.Drawing.Point(30, 176);
             this.button_registr.Name = "button_registr";
             this.button_registr.Size = new System.Drawing.Size(328, 23);

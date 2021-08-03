@@ -27,12 +27,23 @@ namespace ITMO.ADONet.Zachet
 
         private void button_registr_Click(object sender, EventArgs e)
         {
+            if(textBox_OwnerName.Text == "" ||
+                    textBox_OwnerSurName.Text == "" ||
+                    textBox_OwnerNumberDoc.Text == "" ||
+                    textBox_Email.Text == "" ||
+                    textBox_Telefon.Text == "")
+            {
+                MessageBox.Show("Не все поля заполнены!");
+            }
+
+
+
             try
             {
                 Owner owner = new Owner
                 {
-                    Name = this.textBox_OwnerName.Text,
-                    Surname = this.textBox_OwnerSurName.Text,
+                    Name = textBox_OwnerName.Text,
+                    Surname = textBox_OwnerSurName.Text,
                     DocumentNumber = textBox_OwnerNumberDoc.Text,
                     Email = textBox_Email.Text,
                     Telefon = textBox_Telefon.Text
