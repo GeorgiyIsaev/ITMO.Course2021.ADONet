@@ -46,8 +46,6 @@
             this.dateTimePicker_registr = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_NamePet = new System.Windows.Forms.TextBox();
-            this.comboBox_BreedPet = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.comboBox_TypePet = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button_registr = new System.Windows.Forms.Button();
@@ -181,13 +179,11 @@
             this.groupBox2.Controls.Add(this.dateTimePicker_registr);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox_NamePet);
-            this.groupBox2.Controls.Add(this.comboBox_BreedPet);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.comboBox_TypePet);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Location = new System.Drawing.Point(12, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(530, 108);
+            this.groupBox2.Size = new System.Drawing.Size(530, 77);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Новый питомец";
@@ -211,35 +207,19 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 83);
+            this.label8.Location = new System.Drawing.Point(16, 53);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Кличка";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // textBox_NamePet
             // 
-            this.textBox_NamePet.Location = new System.Drawing.Point(99, 80);
+            this.textBox_NamePet.Location = new System.Drawing.Point(99, 50);
             this.textBox_NamePet.Name = "textBox_NamePet";
             this.textBox_NamePet.Size = new System.Drawing.Size(176, 20);
             this.textBox_NamePet.TabIndex = 6;
-            // 
-            // comboBox_BreedPet
-            // 
-            this.comboBox_BreedPet.FormattingEnabled = true;
-            this.comboBox_BreedPet.Location = new System.Drawing.Point(99, 50);
-            this.comboBox_BreedPet.Name = "comboBox_BreedPet";
-            this.comboBox_BreedPet.Size = new System.Drawing.Size(176, 21);
-            this.comboBox_BreedPet.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 53);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Порода:";
             // 
             // comboBox_TypePet
             // 
@@ -255,13 +235,13 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(15, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Вид питомца:";
+            this.label12.Text = "Вид и порода:";
             // 
             // button_registr
             // 
-            this.button_registr.Location = new System.Drawing.Point(13, 240);
+            this.button_registr.Location = new System.Drawing.Point(12, 208);
             this.button_registr.Name = "button_registr";
             this.button_registr.Size = new System.Drawing.Size(524, 23);
             this.button_registr.TabIndex = 13;
@@ -273,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 270);
+            this.ClientSize = new System.Drawing.Size(555, 228);
             this.Controls.Add(this.button_registr);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -308,8 +288,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_registr;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_NamePet;
-        private System.Windows.Forms.ComboBox comboBox_BreedPet;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox_TypePet;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button_registr;

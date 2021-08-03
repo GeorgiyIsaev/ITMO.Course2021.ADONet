@@ -30,17 +30,17 @@ namespace ITMO.ADONet.Zachet
             comboBox_TypePet.Items.Add("<Новый вид>");
             var query =
                 from p in SP.context.PetTypes
-                group p by new { p.Type} into g
+                group p by new { p.TypeAnimal} into g
                 let count = g.Count()
                 where count > 1
                 select new
                 {
-                    g.Key.Type,            
+                    g.Key.TypeAnimal,            
                     Count = count                 
                 };
             foreach (var val in query)
             {
-                comboBox_TypePet.Items.Add(val.Type);
+                comboBox_TypePet.Items.Add(val.TypeAnimal);
             }
 
 
@@ -107,7 +107,7 @@ namespace ITMO.ADONet.Zachet
 
             if (textBox_NamePet.Text == "") { return false; }
           
-            if (comboBox_TypePet.SelectedItem != null || comboBox_BreedPet.SelectedItem != null)
+            if (comboBox_TypePet.SelectedItem != null)
             { return false; }    
 
             return true;
@@ -143,6 +143,16 @@ namespace ITMO.ADONet.Zachet
                     //                    select user;
                 }
             }           
+        }
+
+        private void comboBox_BreedPet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
