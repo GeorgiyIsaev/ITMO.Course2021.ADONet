@@ -25,19 +25,10 @@ namespace ITMO.ADONet.Zachet
       
         }
 
+        bool ifClossing = false;
         private void button_registr_Click(object sender, EventArgs e)
         {
-            if(textBox_OwnerName.Text == "" ||
-                    textBox_OwnerSurName.Text == "" ||
-                    textBox_OwnerNumberDoc.Text == "" ||
-                    textBox_Email.Text == "" ||
-                    textBox_Telefon.Text == "")
-            {
-                MessageBox.Show("Не все поля заполнены!");
-            }
-
-
-
+            ifClossing = true;
             try
             {
                 Owner owner = new Owner
@@ -55,6 +46,22 @@ namespace ITMO.ADONet.Zachet
             {
                 MessageBox.Show("Ошибка: " + ex.ToString());
             }
+        }
+
+        private void OwnerRegistrForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            if (ifClossing == true && (
+                textBox_OwnerName.Text == "" ||
+                textBox_OwnerSurName.Text == "" ||
+                textBox_OwnerNumberDoc.Text == "" ||
+                textBox_Email.Text == "" ||
+                textBox_Telefon.Text == ""))
+            {
+                MessageBox.Show("Не все поля заполнены!");
+                e.Cancel = true;
+            }
+            ifClossing = false;
         }
     }
 }

@@ -33,13 +33,13 @@
             this.textBox_Telefon = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_Email = new System.Windows.Forms.TextBox();
-            this.button_registr = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_OwnerSurName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_OwnerName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_OwnerNumberDoc = new System.Windows.Forms.TextBox();
+            this.button_registr = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,17 +94,6 @@
             this.textBox_Email.Size = new System.Drawing.Size(205, 20);
             this.textBox_Email.TabIndex = 7;
             // 
-            // button_registr
-            // 
-            this.button_registr.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button_registr.Location = new System.Drawing.Point(30, 176);
-            this.button_registr.Name = "button_registr";
-            this.button_registr.Size = new System.Drawing.Size(328, 23);
-            this.button_registr.TabIndex = 6;
-            this.button_registr.Text = "Зарегестрировать";
-            this.button_registr.UseVisualStyleBackColor = true;
-            this.button_registr.Click += new System.EventHandler(this.button_registr_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -153,6 +142,17 @@
             this.textBox_OwnerNumberDoc.Size = new System.Drawing.Size(205, 20);
             this.textBox_OwnerNumberDoc.TabIndex = 0;
             // 
+            // button_registr
+            // 
+            this.button_registr.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button_registr.Location = new System.Drawing.Point(30, 176);
+            this.button_registr.Name = "button_registr";
+            this.button_registr.Size = new System.Drawing.Size(328, 23);
+            this.button_registr.TabIndex = 6;
+            this.button_registr.Text = "Зарегестрировать";
+            this.button_registr.UseVisualStyleBackColor = true;
+            this.button_registr.Click += new System.EventHandler(this.button_registr_Click);
+            // 
             // OwnerRegistrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +162,7 @@
             this.Controls.Add(this.button_registr);
             this.Name = "OwnerRegistrForm";
             this.Text = "Регистрация владельца";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OwnerRegistrForm_FormClosing);
             this.Load += new System.EventHandler(this.OwnerRegistrForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -21,12 +21,12 @@ namespace ITMO.ADONet.Zachet
 
         private void button_vievPet_Click(object sender, EventArgs e)
         {
-       
+            DataGridView_PetsList.DataSource = SP.context.Pets.ToList();
         }
 
         private void button_VievOwner_Click(object sender, EventArgs e)
         {
-
+            DataGridView_PetsList.DataSource = SP.context.Owners.ToList();
         }
 
         private void button_regist_Click(object sender, EventArgs e)
@@ -39,7 +39,6 @@ namespace ITMO.ADONet.Zachet
         private void Form1_Load(object sender, EventArgs e)
         {
             SP.context = new SampleContext();
-            DataGridView_PetsList.DataSource = SP.context.Pets.ToList();
-        }
+          }
     }
 }
