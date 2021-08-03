@@ -28,19 +28,28 @@ namespace ITMO.ADONet.Zachet
             textBox_Telefon.Enabled = false;
 
             comboBox_TypePet.Items.Add("<Новый вид>");
+
+            var result = (from u in ctx.Users
+                          where u.UserId.Equals(id)
+                          select new
+                          {
+                              FullName = u.LName + ", " + u.FName
+                          }).First();
+
+
             var query =
                 from p in SP.context.PetTypes
-                group p by new { p.TypeAnimal} into g
+                group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed} into g
                 let count = g.Count()
                 where count > 1
                 select new
                 {
-                    g.Key.TypeAnimal,            
+                    g.Key.FullName,            
                     Count = count                 
                 };
             foreach (var val in query)
             {
-                comboBox_TypePet.Items.Add(val.TypeAnimal);
+                comboBox_TypePet.Items.Add(val.FullName);
             }
 
 
