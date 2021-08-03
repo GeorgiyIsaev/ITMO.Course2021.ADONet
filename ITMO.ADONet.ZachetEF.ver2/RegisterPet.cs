@@ -53,7 +53,12 @@ namespace ITMO.ADONet.Zachet
             if(selectedOwner.Count() < 1)
             {
                 MessageBox.Show("Запись не найдена!");
+                OwnerRegistrForm ownerForm = new OwnerRegistrForm(textBox_OwnerNumberDoc.Text);
+                ownerForm.Show();
             }
+
+
+
             foreach (var val in selectedOwner)
             {
                 textBox_OwnerName.Text = val.Name;
