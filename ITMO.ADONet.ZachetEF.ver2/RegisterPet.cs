@@ -27,20 +27,23 @@ namespace ITMO.ADONet.Zachet
             textBox_Email.Enabled = false;
             textBox_Telefon.Enabled = false;
 
+            comboBox_TypePet.Items.Add("<Новый вид>");
+            var query =
+                from p in SP.context.PetTypes
+                group p by new { p.Type} into g
+                let count = g.Count()
+                where count > 1
+                select new
+                {
+                    g.Key.Type,            
+                    Count = count                 
+                };
+            foreach (var val in query)
+            {
+                comboBox_TypePet.Items.Add(val.Type);
+            }
 
-            //try
-            //{
-            //    if (connection.State != ConnectionState.Open)
-            //    {
-            //        connection.ConnectionString = testConnect;
-            //        connection.Open();
-            //    }
-            //}           
-            //catch (Exception Xcp)
-            //{
-            //    MessageBox.Show(Xcp.Message, "Unexpected Exception",
-            //           MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+
         }
 
         private void button_check_Click(object sender, EventArgs e)
