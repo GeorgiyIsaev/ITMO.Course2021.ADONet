@@ -24,5 +24,26 @@ namespace ITMO.ADONet.Zachet
 
       
         }
+
+        private void button_registr_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Owner owner = new Owner
+                {
+                    Name = this.textBox_OwnerName.Text,
+                    Surname = this.textBox_OwnerSurName.Text,
+                    DocumentNumber = textBox_OwnerNumberDoc.Text,
+                    Email = textBox_Email.Text,
+                    Telefon = textBox_Telefon.Text
+                };
+                SP.context.Owners.Add(owner);
+                SP.context.SaveChanges();           
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.ToString());
+            }
+        }
     }
 }

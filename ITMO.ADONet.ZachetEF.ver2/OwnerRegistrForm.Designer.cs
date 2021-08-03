@@ -102,6 +102,7 @@
             this.button_registr.TabIndex = 6;
             this.button_registr.Text = "Зарегестрировать";
             this.button_registr.UseVisualStyleBackColor = true;
+            this.button_registr.Click += new System.EventHandler(this.button_registr_Click);
             // 
             // label3
             // 
