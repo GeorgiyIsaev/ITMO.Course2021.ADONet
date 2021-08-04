@@ -134,14 +134,14 @@ namespace ITMO.ADONet.Zachet
                     OwnerRegistrForm ownerForm = new OwnerRegistrForm(docNumber, true);
                     if (ownerForm.ShowDialog() == DialogResult.OK)
                     {
-                     
+                        UpdeteDataGridView_PetsList();
                     }
                     break;
                 case 2:
                     PetTypeRegistrForm petTypeForm = new PetTypeRegistrForm(true, currentRowTabl+1);
                     if (petTypeForm.ShowDialog() == DialogResult.OK)
                     {
-                    
+                        UpdeteDataGridView_PetsList();
                     }
                     break;
               
