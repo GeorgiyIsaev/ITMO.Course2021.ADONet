@@ -79,7 +79,7 @@ namespace ITMO.ADONet.Zachet
                                       select new
                                       {
                                           Owner = ow.Name + " " + ow.Surname
-                                      })
+                                      }).ToList()/*.ElementAt(0).ToString()*/
 
 
                          };
