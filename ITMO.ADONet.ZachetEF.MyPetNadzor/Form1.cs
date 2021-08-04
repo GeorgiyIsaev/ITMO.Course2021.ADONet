@@ -80,8 +80,8 @@ namespace ITMO.ADONet.Zachet
             comboBox_InTabl.Items.Add("Информация о питомцах");
             comboBox_InTabl.Items.Add("Информация о владельцах");
             comboBox_InTabl.Items.Add("Виды животных");
-            comboBox_InTabl.Items.Add("Владельцы (SQL)");
-            comboBox_InTabl.Items.Add("Питомцы (SQL)");
+            // comboBox_InTabl.Items.Add("Владельцы (SQL)");
+            // comboBox_InTabl.Items.Add("Питомцы (SQL)");
 
         }
 
