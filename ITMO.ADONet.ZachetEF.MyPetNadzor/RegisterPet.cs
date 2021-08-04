@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
@@ -17,14 +18,14 @@ namespace ITMO.ADONet.Zachet
         int idPetType = -1;
 
         bool ifCange;
-        int IDPet;
+        int idPet;
 
 
         public RegisterPet(bool ifCange, int IDPet = 0)
         {
             InitializeComponent();
             this.ifCange = ifCange;
-            this.IDPet = IDPet;
+            this.idPet = IDPet;
         }
 
        
@@ -38,7 +39,7 @@ namespace ITMO.ADONet.Zachet
 
             if (ifCange)
             {
-                var pet = SP.context.Pets.Find(IDPet);
+                var pet = SP.context.Pets.Find(idPet);
                 if (pet == null) return;
                 textBox_NamePet.Text = pet.Name;
                 dateTimePicker_registr.Value = pet.DataRegistr;
@@ -143,7 +144,13 @@ namespace ITMO.ADONet.Zachet
                 MessageBox.Show("Не все поля заполнены!");
             }
             try
-            {      
+            {
+                if (ifCange)
+                {
+                    ChangeTypePet();
+                    return;
+                }              
+                
                 Pet pet = new Pet
                 {
                     Name = textBox_NamePet.Text,
@@ -160,7 +167,23 @@ namespace ITMO.ADONet.Zachet
             }
         }
 
-   
+        private void ChangeTypePet()
+        {
+            var pet = SP.context.Pets.Find(idPet);
+            if (pet == null) return;
+
+            pet.Name = textBox_NamePet.Text;
+                   pet.DataRegistr = dateTimePicker_registr.Value;
+            pet.OwnerId = idOwner;
+            pet.PetTypeId = idPetType;      
+
+            SP.context.Entry(pet).State = EntityState.Modified;
+            SP.context.SaveChanges();
+        }
+
+
+
+
         private void comboBox_TypePet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_TypePet.SelectedIndex == 0)
