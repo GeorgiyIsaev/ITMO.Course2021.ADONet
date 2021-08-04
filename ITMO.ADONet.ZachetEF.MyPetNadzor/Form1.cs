@@ -70,6 +70,7 @@ namespace ITMO.ADONet.Zachet
         {
             RegisterPet form = new RegisterPet(false);
             form.Show();
+            UpdeteDataGridView_PetsList();
         }
 
       
@@ -146,11 +147,8 @@ namespace ITMO.ADONet.Zachet
               
             }
             DataGridView_PetsList.ClearSelection();
+            UpdeteDataGridView_PetsList();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+      
     }
 }

@@ -142,24 +142,27 @@ namespace ITMO.ADONet.Zachet
             if (!CheckFullText())
             {
                 MessageBox.Show("Не все поля заполнены!");
+                return;
             }
             try
             {
                 if (ifCange)
                 {
-                    ChangeTypePet();
-                    return;
-                }              
-                
-                Pet pet = new Pet
+                    ChangeTypePet();                   
+                }
+                else
                 {
-                    Name = textBox_NamePet.Text,
-                    DataRegistr = dateTimePicker_registr.Value,
-                    OwnerId =  idOwner,
-                    PetTypeId = idPetType                
-                };
-                SP.context.Pets.Add(pet);
-                SP.context.SaveChanges();
+                    Pet pet = new Pet
+                    {
+                        Name = textBox_NamePet.Text,
+                        DataRegistr = dateTimePicker_registr.Value,
+                        OwnerId = idOwner,
+                        PetTypeId = idPetType
+                    };
+                    SP.context.Pets.Add(pet);
+                    SP.context.SaveChanges();
+                }
+                this.Close();
             }
             catch (Exception ex)
             {
