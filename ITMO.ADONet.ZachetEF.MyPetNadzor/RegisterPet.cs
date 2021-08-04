@@ -70,6 +70,9 @@ namespace ITMO.ADONet.Zachet
 
         private void button_check_Click(object sender, EventArgs e)
         {
+         
+            
+            
             if (textBox_OwnerNumberDoc.Text == String.Empty) return;
             IQueryable<Owner> selectedOwner = from user in SP.context.Owners
                                 where user.DocumentNumber == textBox_OwnerNumberDoc.Text
@@ -77,9 +80,17 @@ namespace ITMO.ADONet.Zachet
 
             if (selectedOwner.Count() < 1)
             {
+                if (ifCange)
+                {
+                    DialogResult resultCange = MessageBox.Show("Проверка смены владельца этого питомца!",
+                        "Вы действительно ходите изменить владельца для этого питомца?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (resultCange == DialogResult.No) return;
+                }
 
                 DialogResult result = MessageBox.Show("Добавить нового владельца",
-                    "Запись не найдена!",
+                    "Запись об этом владельце не найдена! Желаете внести информацию о новом владельце?",
                     MessageBoxButtons.YesNo, 
                     MessageBoxIcon.Question);
                 if (result == DialogResult.No)
