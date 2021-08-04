@@ -15,10 +15,16 @@ namespace ITMO.ADONet.Zachet
     {
         int idOwner = -1;
         int idPetType = -1;
-        
+
+        bool ifCange;
+        int IDPet;
+
+
         public RegisterPet(bool ifCange, int IDPet = 0)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            this.ifCange = ifCange;
+            this.IDPet = IDPet;
         }
 
        
@@ -30,7 +36,22 @@ namespace ITMO.ADONet.Zachet
             textBox_Telefon.Enabled = false;
             AddComboBoxTypePet();
 
+            if (ifCange)
+            {
+                var pet = SP.context.Pets.Find(IDPet);
+                if (pet == null) return;
+                textBox_NamePet.Text = pet.Name;
+                dateTimePicker_registr.Value = pet.DataRegistr;
+                comboBox_TypePet.SelectedIndex = pet.PetTypeId;
 
+                var owner = SP.context.Owners.Find(pet.OwnerId);
+                if (owner == null) return;
+                textBox_OwnerNumberDoc.Text = owner.DocumentNumber;
+                textBox_OwnerName.Text = owner.Name;
+                textBox_OwnerSurName.Text = owner.Surname;
+                textBox_Email.Text = owner.Email;
+                textBox_Telefon.Text = owner.Telefon;                
+            }
         }
 
         private void AddComboBoxTypePet()
@@ -38,22 +59,6 @@ namespace ITMO.ADONet.Zachet
             comboBox_TypePet.Items.Clear();
             comboBox_TypePet.ResetText();
             comboBox_TypePet.Items.Add("<Новый вид>");
-            //var query =
-            //    from p in SP.context.PetTypes
-            //    group p by new { FullName = p.TypeAnimal + "Порода: " + p.Breed } into g
-            //    let count = g.Count()
-            //    where count > 1
-            //    select new
-            //    {
-            //        g.Key.FullName,
-            //        Count = count
-            //    };
-            //foreach (var val in query)
-            //{
-            //    comboBox_TypePet.Items.Add(val.FullName);
-            //}
-
-
             var quere = from p in SP.context.PetTypes select p;
             foreach (var val in quere)
             {
