@@ -47,10 +47,10 @@ namespace ITMO.ADONet.Zachet
                join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
                select new
                {   
-                   ID = p.PetId,                  
-                   Owner = ow.Name + " " + ow.Surname,
+                   ID = p.PetId,
+                   PetName = p.Name,
                    TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
-                   PetName = p.Name,                  
+                   Owner = ow.Name + " " + ow.Surname,   
                    p.DataRegistr                  
                };
             DataGridView_PetsList.DataSource = query.ToList();
