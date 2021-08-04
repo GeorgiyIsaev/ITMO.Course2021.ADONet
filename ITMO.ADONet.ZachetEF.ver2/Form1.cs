@@ -55,6 +55,37 @@ namespace ITMO.ADONet.Zachet
                    p.DataRegistr    
                };
             DataGridView_PetsList.DataSource = query.ToList();
+
+
+
+            var query1 = from ow in SP.context.Owners                         
+                         select new
+                         {
+                             Owner = ow.Name + " " + ow.Surname
+                         };
+
+            var query2 = from pt in SP.context.PetTypes
+                         select new
+                         {
+                             TypePet = pt.TypeAnimal + " (" + pt.Breed + ")"
+                         };
+            var query3 = from p in SP.context.Pets
+                         select new
+                         {
+                             ID = p.PetTypeId,
+                             PetName = p.Name,
+                             p.DataRegistr,
+                             Owner = (from ow in SP.context.Owners
+                                      where ow.OwnerId == p.OwnerId
+                                      select new
+                                      {
+                                          Owner = ow.Name + " " + ow.Surname
+                                      })
+                           
+                         };
+            DataGridView_PetsList.DataSource = query3.ToList();
+
+
         }
 
         private void button_vievPet_Click(object sender, EventArgs e)
