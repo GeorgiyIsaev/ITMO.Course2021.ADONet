@@ -44,48 +44,16 @@ namespace ITMO.ADONet.Zachet
              var query =
                from p in SP.context.Pets
                join ow in SP.context.Owners on p.OwnerId equals ow.OwnerId
-               //join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
+               join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
                select new
-               {                
-                   
-                   ID = p.PetTypeId,                  
+               {   
+                   ID = p.PetId,                  
                    Owner = ow.Name + " " + ow.Surname,
-                   PetName = p.Name,
-                   //TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
-                   p.DataRegistr    
+                   TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
+                   PetName = p.Name,                  
+                   p.DataRegistr                  
                };
-
-
-
-            //var query1 = from ow in SP.context.Owners                         
-            //             select new
-            //             {
-            //                 Owner = ow.Name + " " + ow.Surname
-            //             };
-
-            //var query2 = from pt in SP.context.PetTypes
-            //             select new
-            //             {
-            //                 TypePet = pt.TypeAnimal + " (" + pt.Breed + ")"
-            //             };
-            var query3 = from p in SP.context.Pets
-                         select new
-                         {
-                             ID = p.PetTypeId,
-                             PetName = p.Name,
-                             p.DataRegistr,
-                             Owner = (from ow in SP.context.Owners
-                                      where ow.OwnerId == p.OwnerId
-                                      select new
-                                      {
-                                          Owner = ow.Name + " " + ow.Surname
-                                      }).ToList()/*.ElementAt(0).ToString()*/
-
-
-                         };
             DataGridView_PetsList.DataSource = query.ToList();
-
-
         }
 
         private void button_vievPet_Click(object sender, EventArgs e)
