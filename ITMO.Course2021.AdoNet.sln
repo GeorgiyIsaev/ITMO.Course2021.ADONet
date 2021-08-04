@@ -85,9 +85,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09.Ex02.CustomerManager"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09.Ex03.CourseManager", "Lab09.Ex03.CourseManager\Lab09.Ex03.CourseManager.csproj", "{1CAD8815-828C-4E8E-B6B9-67D0D7ED3604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ADOnet.ZachetEF", "ITMO.ADOnet.ZachetEF\ITMO.ADOnet.ZachetEF.csproj", "{A06D6517-4EC1-47D5-8E64-8C162721F038}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ADOnet.ZachetEF.MiniDB", "ITMO.ADOnet.ZachetEF.MiniDB\ITMO.ADOnet.ZachetEF.MiniDB.csproj", "{A06D6517-4EC1-47D5-8E64-8C162721F038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ADONet.ZachetEF.ver2", "ITMO.ADONet.ZachetEF.ver2\ITMO.ADONet.ZachetEF.ver2.csproj", "{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.ADONet.ZachetEF.MyPetNadzor", "ITMO.ADONet.ZachetEF.MyPetNadzor\ITMO.ADONet.ZachetEF.MyPetNadzor.csproj", "{270D9CDE-2B5D-4F04-AF02-C8EC796E4AAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
