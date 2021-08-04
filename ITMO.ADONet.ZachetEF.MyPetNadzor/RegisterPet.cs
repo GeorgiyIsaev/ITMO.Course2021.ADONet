@@ -51,7 +51,10 @@ namespace ITMO.ADONet.Zachet
                 textBox_OwnerName.Text = owner.Name;
                 textBox_OwnerSurName.Text = owner.Surname;
                 textBox_Email.Text = owner.Email;
-                textBox_Telefon.Text = owner.Telefon;                
+                textBox_Telefon.Text = owner.Telefon;
+
+                idOwner = pet.OwnerId;
+                idPetType = pet.PetTypeId;
             }
         }
 
@@ -176,7 +179,7 @@ namespace ITMO.ADONet.Zachet
             if (pet == null) return;
 
             pet.Name = textBox_NamePet.Text;
-                   pet.DataRegistr = dateTimePicker_registr.Value;
+            pet.DataRegistr = dateTimePicker_registr.Value;
             pet.OwnerId = idOwner;
             pet.PetTypeId = idPetType;      
 
