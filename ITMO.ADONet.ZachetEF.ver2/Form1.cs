@@ -44,31 +44,30 @@ namespace ITMO.ADONet.Zachet
              var query =
                from p in SP.context.Pets
                join ow in SP.context.Owners on p.OwnerId equals ow.OwnerId
-              // join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
+               //join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
                select new
                {                
                    
                    ID = p.PetTypeId,                  
                    Owner = ow.Name + " " + ow.Surname,
                    PetName = p.Name,
-                  // TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
+                   //TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
                    p.DataRegistr    
                };
-            DataGridView_PetsList.DataSource = query.ToList();
 
 
 
-            var query1 = from ow in SP.context.Owners                         
-                         select new
-                         {
-                             Owner = ow.Name + " " + ow.Surname
-                         };
+            //var query1 = from ow in SP.context.Owners                         
+            //             select new
+            //             {
+            //                 Owner = ow.Name + " " + ow.Surname
+            //             };
 
-            var query2 = from pt in SP.context.PetTypes
-                         select new
-                         {
-                             TypePet = pt.TypeAnimal + " (" + pt.Breed + ")"
-                         };
+            //var query2 = from pt in SP.context.PetTypes
+            //             select new
+            //             {
+            //                 TypePet = pt.TypeAnimal + " (" + pt.Breed + ")"
+            //             };
             var query3 = from p in SP.context.Pets
                          select new
                          {
@@ -81,7 +80,8 @@ namespace ITMO.ADONet.Zachet
                                       {
                                           Owner = ow.Name + " " + ow.Surname
                                       })
-                           
+
+
                          };
             DataGridView_PetsList.DataSource = query.ToList();
 
