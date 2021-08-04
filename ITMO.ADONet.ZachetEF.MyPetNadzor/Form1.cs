@@ -68,7 +68,7 @@ namespace ITMO.ADONet.Zachet
 
         private void button_regist_Click(object sender, EventArgs e)
         {
-            RegisterPet form = new RegisterPet();
+            RegisterPet form = new RegisterPet(false);
             form.Show();
         }
 
@@ -123,7 +123,11 @@ namespace ITMO.ADONet.Zachet
 
             switch (valTabl)
             {
-                case 0: case 4: DataGridVievFromPet(); break;
+                case 0: case 4:
+                    int IDPet = Int32.Parse(DataGridView_PetsList.Rows[currentRowTabl].Cells[0].Value.ToString());
+                    RegisterPet form = new RegisterPet(true, IDPet);
+                    form.Show();                
+                    break;
                 case 1: case 3:
                     String docNumber = DataGridView_PetsList.Rows[currentRowTabl].Cells[3].Value.ToString();
                     OwnerRegistrForm ownerForm = new OwnerRegistrForm(docNumber, true);
@@ -142,6 +146,11 @@ namespace ITMO.ADONet.Zachet
               
             }
             DataGridView_PetsList.ClearSelection();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -121,7 +121,7 @@
   <data name="button_update.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAACYktHRAD/h4/MvwAAAbBJREFU
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAACYktHRAD/h4/MvwAAAbBJREFU
         WEfdls0qRVEYho8SKWVmhPxdg5H7MJBcg4Gf3I2BCVMhSnIRBkZKmCsD/94HX33t1j5nr7Wts3fnqSd8
         6lvvWb+nM8jM/v1sDbeyVaG+ZKtCEahVoSxQI6Hm5a48lw/yVfpAfQs1Jw/lhywGCHkps7Emn2Vo4JBZ
         Z2hb+sE+5bFclczaiPT/zxqGmfGDXcslWaQvYfj0fpku5LgMUSXMmJz8/TWNA2lhmJmyMFAlzJnc+/kr
@@ -132,4 +132,7 @@
         VRBqEOl0vgGqU8uWjdSQygAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

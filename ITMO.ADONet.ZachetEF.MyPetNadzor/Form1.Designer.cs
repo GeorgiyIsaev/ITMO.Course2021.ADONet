@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_regist = new System.Windows.Forms.Button();
             this.button_vievPet = new System.Windows.Forms.Button();
@@ -35,7 +36,11 @@
             this.comboBox_InTabl = new System.Windows.Forms.ComboBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_record = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_regist
@@ -63,6 +68,7 @@
             this.DataGridView_PetsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_PetsList.Location = new System.Drawing.Point(12, 77);
             this.DataGridView_PetsList.Name = "DataGridView_PetsList";
+            this.DataGridView_PetsList.ReadOnly = true;
             this.DataGridView_PetsList.Size = new System.Drawing.Size(776, 361);
             this.DataGridView_PetsList.TabIndex = 2;
             // 
@@ -95,6 +101,26 @@
             this.button_record.UseVisualStyleBackColor = true;
             this.button_record.Click += new System.EventHandler(this.button_record_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьЗаписьToolStripMenuItem,
+            this.изменитьЗаписьToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 48);
+            // 
+            // удалитьЗаписьToolStripMenuItem
+            // 
+            this.удалитьЗаписьToolStripMenuItem.Name = "удалитьЗаписьToolStripMenuItem";
+            this.удалитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.удалитьЗаписьToolStripMenuItem.Text = "Удалить запись";
+            // 
+            // изменитьЗаписьToolStripMenuItem
+            // 
+            this.изменитьЗаписьToolStripMenuItem.Name = "изменитьЗаписьToolStripMenuItem";
+            this.изменитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.изменитьЗаписьToolStripMenuItem.Text = "Изменить запись";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +136,7 @@
             this.Text = "RosPetNadzor";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PetsList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -122,6 +149,9 @@
         private System.Windows.Forms.ComboBox comboBox_InTabl;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_record;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem удалитьЗаписьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изменитьЗаписьToolStripMenuItem;
     }
 }
 

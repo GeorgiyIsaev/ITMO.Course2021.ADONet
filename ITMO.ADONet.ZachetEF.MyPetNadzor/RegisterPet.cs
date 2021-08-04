@@ -16,7 +16,7 @@ namespace ITMO.ADONet.Zachet
         int idOwner = -1;
         int idPetType = -1;
         
-        public RegisterPet()
+        public RegisterPet(bool ifCange, int IDPet = 0)
         {
             InitializeComponent(); 
         }
