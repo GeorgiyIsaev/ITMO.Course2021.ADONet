@@ -130,7 +130,7 @@ namespace ITMO.ADONet.Zachet
             {      
                 Pet pet = new Pet
                 {
-                    Name = textBox_OwnerName.Text,
+                    Name = textBox_NamePet.Text,
                     DataRegistr = dateTimePicker_registr.Value,
                     OwnerId =  idOwner,
                     PetTypeId = idPetType                

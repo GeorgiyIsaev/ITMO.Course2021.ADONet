@@ -44,14 +44,14 @@ namespace ITMO.ADONet.Zachet
              var query =
                from p in SP.context.Pets
                join ow in SP.context.Owners on p.OwnerId equals ow.OwnerId
-               join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
+              // join pt in SP.context.PetTypes on p.PetTypeId equals pt.PetTypeId
                select new
                {                
                    
                    ID = p.PetTypeId,                  
                    Owner = ow.Name + " " + ow.Surname,
                    PetName = p.Name,
-                   TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
+                  // TypePet = pt.TypeAnimal + " (" + pt.Breed +")",
                    p.DataRegistr    
                };
             DataGridView_PetsList.DataSource = query.ToList();
@@ -83,7 +83,7 @@ namespace ITMO.ADONet.Zachet
                                       })
                            
                          };
-            DataGridView_PetsList.DataSource = query3.ToList();
+            DataGridView_PetsList.DataSource = query.ToList();
 
 
         }
@@ -155,8 +155,8 @@ namespace ITMO.ADONet.Zachet
 
             switch (valTabl)
             {
-                case 0: case 3: DataGridVievFromPet(); break;
-                case 1: case 4:
+                case 0: case 4: DataGridVievFromPet(); break;
+                case 1: case 3:
                     String docNumber = DataGridView_PetsList.Rows[currentRowTabl].Cells[3].Value.ToString();
                     OwnerRegistrForm ownerForm = new OwnerRegistrForm(docNumber, true);
                     if (ownerForm.ShowDialog() == DialogResult.OK)
